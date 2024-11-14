@@ -7,5 +7,5 @@ public class Main {
         int H = sc.nextInt();
         double area = (double) (W * H) / 2;
         System.out.printf("%.1f", area);
-    }
+    } 
 }
