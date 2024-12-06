@@ -8,7 +8,7 @@ public class Main {
         int cnt = 0;
         StringBuilder S = new StringBuilder();
         for (int i = 1; i <= n; i++) {
-            S.append(Integer.toString(i));
+            S.append(String.valueOf(i));
         }
         for (int i = 0; i < S.length(); i++) {
             if (Integer.parseInt(String.valueOf(S.charAt(i))) == d) cnt++;
