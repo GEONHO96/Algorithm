@@ -13,11 +13,11 @@ public class Main {
         for (int i = 0; i < N; i++) {
             if (i == 0) {
                 if (arr[i] == 0) score[i] = 0;
-                if (arr[i] == 1) score[i] = 1;
+                else if (arr[i] == 1) score[i] = 1;
             } else {
                 if (arr[i - 1] == 0 && arr[i] == 1) score[i] = 1;
-                if (arr[i - 1] == 1 && arr[i] == 1) score[i] = score[i - 1] + 1;
-                if (arr[i - 1] == 1 && arr[i] == 0) score[i] = 0;
+                else if (arr[i - 1] == 1 && arr[i] == 0) score[i] = 0;
+                else if (arr[i - 1] == 1 && arr[i] == 1) score[i] = score[i - 1] + 1;
             }
         }
         for (int i = 0; i < N; i++) {
