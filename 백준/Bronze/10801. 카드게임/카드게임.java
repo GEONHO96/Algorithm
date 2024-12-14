@@ -5,7 +5,6 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int countA = 0;
         int countB = 0;
-        int draw = 0;
         int[] A = new int[10];
         for (int i = 0; i < 10; i++) {
             A[i] = sc.nextInt();
@@ -16,8 +15,8 @@ public class Main {
         }
         for (int i = 0; i < 10; i++) {
             if (A[i] > B[i]) countA++;
-            else if (A[i] == B[i]) draw++;
-            else countB++;
+            else if (B[i] > A[i]) countB++;
+            else continue;
         }
         if (countA > countB) System.out.println("A");
         else if (countA == countB) System.out.println("D");
