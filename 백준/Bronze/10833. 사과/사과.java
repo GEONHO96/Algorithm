@@ -8,7 +8,8 @@ public class Main {
         for (int i = 0; i < N; i++) {
             int student = sc.nextInt();
             int apple = sc.nextInt();
-            sum += apple % student;
+            int remainder = apple % student;
+            sum += remainder;
         }
         System.out.println(sum);
     }
