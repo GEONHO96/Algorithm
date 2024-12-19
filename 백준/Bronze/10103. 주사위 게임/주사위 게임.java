@@ -3,20 +3,16 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        int changyeong = 100;
+        int yeongdeok = 100;
         int n = sc.nextInt();
-        int A = 100;
-        int B = 100;
         for (int i = 0; i < n; i++) {
-            int C = sc.nextInt();
-            int D = sc.nextInt();
-            if (C > D) {
-                B = B - C;
-            }
-            else if (C < D) {
-                A = A - D;
-            }
+            int dice1 = sc.nextInt();
+            int dice2 = sc.nextInt();
+            if (dice1 > dice2) yeongdeok -= dice1;
+            else if (dice1 < dice2) changyeong -= dice2;
         }
-        System.out.println(A);
-        System.out.println(B);
+        System.out.println(changyeong);
+        System.out.println(yeongdeok);
     }
 }
