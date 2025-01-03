@@ -6,9 +6,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         BigInteger n = sc.nextBigInteger();
         BigInteger m = sc.nextBigInteger();
-        BigInteger k = n.divide(m);
-        BigInteger l = n.mod(m);
-        System.out.println(k);
-        System.out.println(l);
+        System.out.println(n.divide(m));
+        System.out.println(n.mod(m));
     }
 }
