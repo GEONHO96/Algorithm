@@ -12,10 +12,10 @@ public class Main {
                 if (yutnori[j] == 0) cnt0++;
                 if (yutnori[j] == 1) cnt1++;
             }
-            if (cnt0 == 4 && cnt1 == 0) System.out.println("D");
-            if (cnt0 == 3 && cnt1 == 1) System.out.println("C");
-            if (cnt0 == 2 && cnt1 == 2) System.out.println("B");
             if (cnt0 == 1 && cnt1 == 3) System.out.println("A");
+            if (cnt0 == 2 && cnt1 == 2) System.out.println("B");
+            if (cnt0 == 3 && cnt1 == 1) System.out.println("C");
+            if (cnt0 == 4 && cnt1 == 0) System.out.println("D");
             if (cnt0 == 0 && cnt1 == 4) System.out.println("E");
         }
     }
