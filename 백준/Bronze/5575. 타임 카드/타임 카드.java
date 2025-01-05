@@ -10,7 +10,7 @@ public class Main {
             int finishHour = sc.nextInt();
             int finishMinute = sc.nextInt();
             int finishSecond = sc.nextInt();
-            int period = (finishHour * 3600  + finishMinute * 60 + finishSecond) - (startHour * 3600 + startMinute * 60 + startSecond);
+            int period = (finishHour * 3600 + finishMinute * 60 + finishSecond) - (startHour * 3600 + startMinute * 60 + startSecond);
             int h = period / 3600;
             period %= 3600;
             int m = period / 60;
