@@ -6,7 +6,7 @@ public class Main {
     public static long max;
     public static long[] arr;
 
-    public static boolean f(long mid) {
+    public static boolean function(long mid) {
         long sum = 0;
         for (int i = 0; i < K; i++) {
             sum += (arr[i] / mid);
@@ -21,22 +21,21 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         K = sc.nextInt();
         N = sc.nextInt();
-        max = 0;
         arr = new long[K];
         for (int i = 0; i < K; i++) {
-            arr[i] = sc.nextInt();
-            max = Math.max(arr[i], max);
+            arr[i] = sc.nextLong();
+            max = Math.max(max, arr[i]);
         }
-        long l = 1;
-        long r = max;
-        while (l <= r) {
-            long mid = (l + r) / 2;
-            if (f(mid)) {
-                l = mid + 1;
+        long left = 1;
+        long right = max;
+        while (left <= right) {
+            long mid = (left + right) / 2;
+            if (function(mid)) {
+                left = mid + 1;
             } else {
-                r = mid - 1;
+                right = mid - 1;
             }
         }
-        System.out.println(r);
+        System.out.println(right);
     }
 }
