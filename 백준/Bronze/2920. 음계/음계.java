@@ -4,14 +4,20 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] arr1 = new int[]{1, 2, 3, 4, 5, 6, 7, 8};
-        int[] arr2 = new int[]{8, 7, 6, 5, 4, 3, 2, 1};
-        int[] arr3 = new int[8];
+        int[] array = new int[8];
         for (int i = 0; i < 8; i++) {
-            arr3[i] = sc.nextInt();
+            array[i] = sc.nextInt();
         }
-        if (Arrays.equals(arr3, arr1)) System.out.println("ascending");
-        else if (Arrays.equals(arr3, arr2)) System.out.println("descending");
+        int[] sequence1 = new int[8];
+        for (int i = 0; i < 8; i++) {
+            sequence1[i] = i + 1;
+        }
+        int[] sequence2 = new int[8];
+        for (int i = 0; i < 8; i++) {
+            sequence2[i] = 8 - i;
+        }
+        if (Arrays.equals(array, sequence1)) System.out.println("ascending");
+        else if (Arrays.equals(array, sequence2)) System.out.println("descending");
         else System.out.println("mixed");
     }
 }
