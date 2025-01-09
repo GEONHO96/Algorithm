@@ -9,7 +9,7 @@ public class Main {
 
         for (int i = 0; i < T; i++) {
             String str = sc.nextLine();
-            if (isValidParentheses(str)) {
+            if (isValidParenthesis(str)) {
                 System.out.println("YES");
             } else {
                 System.out.println("NO");
@@ -18,7 +18,7 @@ public class Main {
         sc.close();
     }
 
-    public static boolean isValidParentheses(String str) {
+    public static boolean isValidParenthesis(String str) {
         Stack<Character> stack = new Stack<>();
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
