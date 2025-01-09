@@ -18,21 +18,15 @@ public class Main {
 
         for (int i = 0; i < n; i++) {
             int target = sequence[i];
-
             while (now <= target) {
                 stack.push(now);
                 sb.append("+\n");
                 now++;
             }
-
-            /**
-             * 스택이 가장 윗 부분이 구하고자 하는 수와 같은지 체크
-             */
             if (!stack.isEmpty() && stack.peek() == target) {
                 stack.pop();
                 sb.append("-\n");
             } else {
-                // 수열이 불가능함
                 isPossible = false;
                 break;
             }
@@ -41,7 +35,7 @@ public class Main {
         if (isPossible) {
             System.out.print(sb.toString());
         } else {
-            System.out.println("NO");
+            System.out.print("NO");
         }
 
         sc.close();
