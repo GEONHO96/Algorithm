@@ -43,7 +43,7 @@ public class Main {
         int firstColor = paper[x][y];
         for (int i = x; i < x + size; i++) {
             for (int j = y; j < y + size; j++) {
-                if (firstColor != paper[i][j]) {
+                if (paper[i][j] != firstColor) {
                     return false;
                 }
             }
