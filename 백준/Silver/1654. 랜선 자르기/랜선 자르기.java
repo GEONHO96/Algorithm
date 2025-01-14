@@ -1,4 +1,7 @@
-import java.util.Scanner;
+import java.util.StringTokenizer;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 public class Main {
     public static int K;
@@ -6,7 +9,7 @@ public class Main {
     public static long max;
     public static long[] arr;
 
-    public static boolean function(long mid) {
+    public static boolean isSatisfied(long mid) {
         long sum = 0;
         for (int i = 0; i < K; i++) {
             sum += (arr[i] / mid);
@@ -17,20 +20,21 @@ public class Main {
         return false;
     }
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        K = sc.nextInt();
-        N = sc.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        K = Integer.parseInt(st.nextToken());
+        N = Integer.parseInt(st.nextToken());
         arr = new long[K];
         for (int i = 0; i < K; i++) {
-            arr[i] = sc.nextLong();
+            arr[i] = Long.parseLong(br.readLine());
             max = Math.max(max, arr[i]);
         }
         long left = 1;
         long right = max;
         while (left <= right) {
             long mid = (left + right) / 2;
-            if (function(mid)) {
+            if (isSatisfied(mid)) {
                 left = mid + 1;
             } else {
                 right = mid - 1;
