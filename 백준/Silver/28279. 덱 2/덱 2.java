@@ -18,7 +18,6 @@ public class Main {
         for (int i = 0; i < N; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             int command = Integer.parseInt(st.nextToken());
-
             if (command == 1) {
                 int value = Integer.parseInt(st.nextToken());
                 deque.addFirst(value);
