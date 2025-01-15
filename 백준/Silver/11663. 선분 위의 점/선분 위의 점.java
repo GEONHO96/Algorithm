@@ -20,26 +20,23 @@ public class Main {
         for (int i = 0; i < N; i++) {
             points[i] = Integer.parseInt(st.nextToken());
         }
-
-        Arrays.sort(points);
         
+        Arrays.sort(points);
+
         for (int i = 0; i < M; i++) {
             st = new StringTokenizer(br.readLine());
             int L = Integer.parseInt(st.nextToken());
             int R = Integer.parseInt(st.nextToken());
-            
             int left = lowerBound(points, L);
             int right = upperBound(points, R);
-            
             int count = right - left + 1;
             bw.write(count + "\n");
         }
-        
         bw.flush();
         bw.close();
         br.close();
     }
-    
+
     private static int lowerBound(int[] points, int target) {
         int left = 0, right = points.length - 1;
         while (left <= right) {
@@ -52,7 +49,7 @@ public class Main {
         }
         return left;
     }
-    
+
     private static int upperBound(int[] points, int target) {
         int left = 0, right = points.length - 1;
         while (left <= right) {
