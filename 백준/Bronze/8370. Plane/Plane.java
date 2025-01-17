@@ -7,7 +7,7 @@ public class Main {
         int k1 = sc.nextInt();
         int n2 = sc.nextInt();
         int k2 = sc.nextInt();
-        int sum = n1 * k1 + n2 * k2;
-        System.out.println(sum);
+        int total = n1 * k1 + n2 * k2;
+        System.out.println(total);
     }
 }
