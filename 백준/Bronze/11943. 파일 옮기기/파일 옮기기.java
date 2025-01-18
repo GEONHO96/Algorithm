@@ -1,20 +1,15 @@
-import java.io.IOException;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int A = Integer.parseInt(st.nextToken());
-        int B = Integer.parseInt(st.nextToken());
-        st = new StringTokenizer(br.readLine());
-        int C = Integer.parseInt(st.nextToken());
-        int D = Integer.parseInt(st.nextToken());
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int A = sc.nextInt();
+        int B = sc.nextInt();
+        int C = sc.nextInt();
+        int D = sc.nextInt();
         int min = 2000;
-        min = Math.min(A + D, min);
-        min = Math.min(B + C, min);
+        min = Math.min(min, A + D);
+        min = Math.min(min, B + C);
         System.out.println(min);
     }
 }
