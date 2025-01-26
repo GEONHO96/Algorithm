@@ -5,14 +5,9 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int T = sc.nextInt();
         for (int i = 0; i < T; i++) {
-            int K = sc.nextInt();
-            String S = sc.next();
-            for (int j = 0; j < S.length(); j++) {
-                if (j != K - 1) {
-                    System.out.print(S.charAt(j));
-                }
-            }
-            System.out.println();
+            int N = sc.nextInt();
+            String sentence = sc.next();
+            System.out.println(sentence.substring(0, N - 1) + sentence.substring(N));
         }
     }
 }
