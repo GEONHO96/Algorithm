@@ -12,6 +12,6 @@ public class Main {
         int b_x = c_x - a_z;
         int b_y = c_y / a_y;
         int b_z = c_z - a_x;
-        System.out.print(b_x + " " + b_y + " " + b_z);
+        System.out.println(b_x + " " + b_y + " " + b_z);
     }
 }
