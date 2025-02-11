@@ -1,34 +1,47 @@
-import java.util.Scanner;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
         int N = sc.nextInt();
-        int[] A = new int[N];
+        int[] arr = new int[N];
         for (int i = 0; i < N; i++) {
-            A[i] = sc.nextInt();
+            arr[i] = sc.nextInt();
         }
-        Arrays.sort(A);
+
         int M = sc.nextInt();
+        int[] queries = new int[M];
         for (int i = 0; i < M; i++) {
-            int answer = 0;
-            int l = 0;
-            int r = N - 1;
-            int k = sc.nextInt();
-            while (l <= r) {
-                int mid = (l + r) / 2;
-                if (A[mid] == k) {
-                    answer = 1;
-                    break;
-                }
-                if (A[mid] > k) {
-                    r = mid - 1;
-                } else {
-                    l = mid + 1;
-                }
-            }
-            System.out.println(answer);
+            queries[i] = sc.nextInt();
         }
+
+        Arrays.sort(arr);
+
+        for (int query : queries) {
+            if (binarySearch(arr, query)) {
+                System.out.println(1);
+            } else {
+                System.out.println(0);
+            }
+        }
+    }
+
+    public static boolean binarySearch(int[] arr, int target) {
+        int left = 0, right = arr.length - 1;
+
+        while (left <= right) {
+            int mid = (left + right) / 2;
+
+            if (arr[mid] == target) {
+                return true;
+            } else if (arr[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return false;
     }
 }
