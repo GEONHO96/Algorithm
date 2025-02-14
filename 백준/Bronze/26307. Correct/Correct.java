@@ -5,6 +5,6 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int HH = sc.nextInt();
         int MM = sc.nextInt();
-        System.out.println((HH - 9) * 60 + MM);
+        System.out.print((HH - 9) * 60 + MM);
     }
 }
