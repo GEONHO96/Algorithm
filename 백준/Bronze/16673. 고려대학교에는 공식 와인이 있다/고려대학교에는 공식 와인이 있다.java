@@ -6,10 +6,10 @@ public class Main {
         int C = sc.nextInt();
         int K = sc.nextInt();
         int P = sc.nextInt();
-        int wine = 0;
+        int wines = 0;
         for (int i = 1; i <= C; i++) {
-            wine += K * i + P * i * i;
+            wines += K * i + P * i * i;
         }
-        System.out.println(wine);
+        System.out.println(wines);
     }
 }
