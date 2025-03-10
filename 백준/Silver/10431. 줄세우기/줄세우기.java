@@ -19,8 +19,8 @@ public class Main {
             }
             int swapCount = 0;
             for (int pass = 0; pass < 19; pass++) {
+                int temp;
                 for (int j = 0; j < 19 - pass; j++) {
-                    int temp;
                     if (arr[j] > arr[j + 1]) {
                         temp = arr[j];
                         arr[j] = arr[j + 1];
