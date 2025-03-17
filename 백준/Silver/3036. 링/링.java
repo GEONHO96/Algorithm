@@ -28,5 +28,5 @@ public class Main {
             b = temp % b;
         }
         return a;
-    } 
+    }
 }
