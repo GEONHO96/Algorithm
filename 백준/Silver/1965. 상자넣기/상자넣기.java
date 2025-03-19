@@ -23,9 +23,9 @@ public class Main {
             for (int j = 0; j < i; j++) {
                 if (boxes[i] > boxes[j]) {
                     dp[i] = Math.max(dp[i], dp[j] + 1);
-                }
-                maxCount = Math.max(maxCount, dp[i]);
+                }                
             }
+            maxCount = Math.max(maxCount, dp[i]);
         }
         bw.write(maxCount + "\n");
         bw.flush();
