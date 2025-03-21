@@ -9,9 +9,9 @@ import java.util.LinkedList;
 
 public class Main {
     static int n, m;
+    static int numberOfDrawings, maxArea;
     static int[][] drawingPaper;
     static boolean[][] visited;
-    static int numberOfDrawings, maxArea;
     static int[] dx = {-1, 1, 0, 0};
     static int[] dy = {0, 0, -1, 1};
     public static void main(String[] args) throws IOException {
@@ -34,7 +34,7 @@ public class Main {
             for (int j = 0; j < m; j++) {
                 if (drawingPaper[i][j] == 1 && !visited[i][j]) {
                     int area = bfs(i, j);
-                    maxArea = Math.max(area, maxArea);
+                    maxArea = Math.max(maxArea, area);
                     numberOfDrawings++;
                 }
             }
