@@ -16,9 +16,9 @@ public class Main {
             StringTokenizer st = new StringTokenizer(br.readLine());
             for (int j = 0; j < N; j++) {
                 int num = Integer.parseInt(st.nextToken());
-                if (pq.size() < N) {
+                if (N > pq.size()) {
                     pq.offer(num);
-                } else if (num > pq.peek()) {
+                } else if (pq.peek() < num) {
                     pq.poll();
                     pq.offer(num);
                 }
