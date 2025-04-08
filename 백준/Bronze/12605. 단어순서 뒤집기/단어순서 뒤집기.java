@@ -12,9 +12,9 @@ public class Main {
         for (int i = 1; i <= N; i++) {
             String sentence = br.readLine();
             String[] words = sentence.split(" ");
-            int M = words.length;
+            int L = words.length;
             bw.write("Case #" + i + ": ");
-            for (int j = M - 1; j >= 0; j--) {
+            for (int j = L - 1; j >= 0; j--) {
                 bw.write(words[j] + " ");
             }
             bw.write("\n");
