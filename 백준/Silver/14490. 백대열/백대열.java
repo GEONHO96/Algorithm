@@ -10,20 +10,20 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         String percentage = br.readLine();
         String[] parts = percentage.split(":");
-        int a = Integer.parseInt(parts[0]);
-        int b = Integer.parseInt(parts[1]);
-        bw.write((a / gcd(a, b)) + ":" + (b / gcd(a, b)));
+        int n = Integer.parseInt(parts[0]);
+        int m = Integer.parseInt(parts[1]);
+        bw.write(n / gcd(n, m) + ":" + m / gcd(n, m));
         bw.flush();
         bw.close();
         br.close();
     }
-    public static int gcd(int a, int b) {
+    public static int gcd(int n, int m) {
         int temp;
-        while (b > 0) {
-            temp = a;
-            a = b;
-            b = temp % b;
+        while (m > 0) {
+            temp = n;
+            n = m;
+            m = temp % m;
         }
-        return a;
+        return n;
     }
 }
