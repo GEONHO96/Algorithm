@@ -33,7 +33,7 @@ public class Main {
         br.close();
     }
     public static int dfs(int x, int y) {
-        if (x == M - 1  && y == N - 1) return 1;
+        if (x == M - 1 && y == N - 1) return 1;
         if (dp[x][y] != -1) return dp[x][y];
         dp[x][y] = 0;
         for (int dir = 0; dir < 4; dir++) {
