@@ -24,10 +24,10 @@ public class Main {
         queue.add(0);
         visited[0] = true;
         while (!queue.isEmpty()) {
-            int cur = queue.poll();
-            if (cur == n + 1) return true;
+            int now = queue.poll();
+            if (n + 1 == now) return true;
             for (int i = 0; i < n + 2; i++) {
-                if (!visited[i] && distance(locations[cur], locations[i]) <= 1000) {
+                if (!visited[i] && distance(locations[now], locations[i]) <= 1000) {
                     visited[i] = true;
                     queue.add(i);
                 }
