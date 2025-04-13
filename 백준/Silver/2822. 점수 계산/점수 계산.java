@@ -24,7 +24,7 @@ public class Main {
         for (int i = 3; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 if (scores[i] == copyOfScores[j]) {
-                    list.add((j + 1));
+                    list.add(j + 1);
                 }
             }
         }
