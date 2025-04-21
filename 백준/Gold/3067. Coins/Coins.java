@@ -10,12 +10,12 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int T = Integer.parseInt(br.readLine());
-        while(T-- > 0) {
+        while (T-- > 0) {
             int N = Integer.parseInt(br.readLine());
             int[] coin = new int[N];
             StringTokenizer st = new StringTokenizer(br.readLine());
             for (int i = 0; i < N; i++) {
-                coin[i]= Integer.parseInt(st.nextToken());
+                coin[i] = Integer.parseInt(st.nextToken());
             }
             int M = Integer.parseInt(br.readLine());
             int[] dp = new int[M + 1];
