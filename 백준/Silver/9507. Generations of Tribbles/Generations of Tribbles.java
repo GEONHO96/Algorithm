@@ -9,7 +9,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int t = Integer.parseInt(br.readLine());
-        for (int i = 0; i < t; i++) {
+        while (t-- > 0) {
             int n = Integer.parseInt(br.readLine());
             if (n == 0) bw.write(1 + "\n");
             if (n == 1) bw.write(1 + "\n");
@@ -21,8 +21,8 @@ public class Main {
                 koong[1] = 1;
                 koong[2] = 2;
                 koong[3] = 4;
-                for (int j = 4; j <= n; j++) {
-                    koong[j] = koong[j - 1] + koong[j - 2] + koong[j - 3] + koong[j - 4];
+                for (int i = 4; i <= n; i++) {
+                    koong[i] = koong[i - 1] + koong[i - 2] + koong[i - 3] + koong[i - 4];
                 }
                 bw.write(koong[n] + "\n");
             }
