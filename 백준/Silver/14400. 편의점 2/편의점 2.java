@@ -24,8 +24,8 @@ public class Main {
         int medianY = y[n / 2];
         long totalDistance = 0;
         for (int i = 0; i < n; i++) {
-            totalDistance += Math.abs(x[i] - medianX);
-            totalDistance += Math.abs(y[i] - medianY);
+            totalDistance += Math.abs(medianX - x[i]);
+            totalDistance += Math.abs(medianY - y[i]);
         }
         bw.write(totalDistance + "\n");
         bw.flush();
