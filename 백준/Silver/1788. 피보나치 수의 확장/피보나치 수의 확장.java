@@ -14,16 +14,16 @@ public class Main {
         int[] fib = new int[absN + 2];
         fib[0] = 0;
         fib[1] = 1;
+        for (int i = 2; i <= absN; i++) {
+            fib[i] = (fib[i - 1] + fib[i - 2]) % MOD;
+        }
         int sign;
         if (n == 0) {
             sign = 0;
-        } else if (n > 0) {
+        } else if (n > 1) {
             sign = 1;
         } else {
             sign = (n % 2 == 0) ? -1 : 1;
-        }
-        for (int i = 2; i <= absN; i++) {
-            fib[i] = (fib[i - 1] + fib[i - 2]) % MOD;
         }
         bw.write(sign + "\n" + fib[absN] + "\n");
         bw.flush();
