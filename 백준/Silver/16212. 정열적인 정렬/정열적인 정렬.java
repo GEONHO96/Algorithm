@@ -11,8 +11,8 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int N = Integer.parseInt(br.readLine());
-        StringTokenizer st = new StringTokenizer(br.readLine());
         int[] a = new int[N];
+        StringTokenizer st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
             a[i] = Integer.parseInt(st.nextToken());
         }
