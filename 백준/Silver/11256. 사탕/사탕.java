@@ -24,12 +24,14 @@ public class Main {
                 boxes[i] = R * C;
             }
             Arrays.sort(boxes, Collections.reverseOrder());
-            int count = 0;
             int sum = 0;
+            int count = 0;
             for (int i = 0; i < N; i++) {
                 sum += boxes[i];
                 count++;
-                if (sum >= J) break;
+                if (sum >= J) {
+                    break;
+                }
             }
             bw.write(count + "\n");
         }
