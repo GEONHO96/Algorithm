@@ -11,7 +11,7 @@ public class Main {
         String S = br.readLine();
         int i = 0;
         boolean isValid = true;
-        while (S.length() > i) {
+        while (i < S.length()) {
             if (i + 1 < S.length() && S.substring(i, i + 2).equals("pi")) {
                 i += 2;
             } else if (i + 1 < S.length() && S.substring(i, i + 2).equals("ka")) {
