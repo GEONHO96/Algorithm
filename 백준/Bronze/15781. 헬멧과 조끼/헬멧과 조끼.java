@@ -1,23 +1,35 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int M = sc.nextInt();
-        int maxHelmet = 0;
-        int maxVest = 0;
-        int[] helmet = new int[N];
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
+        Integer[] h = new Integer[N];
+        st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
-            helmet[i] = sc.nextInt();
-            maxHelmet = Math.max(helmet[i], maxHelmet);
+            h[i] = Integer.parseInt(st.nextToken());
         }
-        int[] vest = new int[M];
+        Arrays.sort(h, Collections.reverseOrder());
+        Integer[] a = new Integer[M];
+        st = new StringTokenizer(br.readLine());
         for (int i = 0; i < M; i++) {
-            vest[i] = sc.nextInt();
-            maxVest = Math.max(vest[i], maxVest);
+            a[i] = Integer.parseInt(st.nextToken());
         }
-        int savePoint = maxHelmet + maxVest;
-        System.out.println(savePoint);
+        Arrays.sort(a, Collections.reverseOrder());
+        int maxDefense = h[0] + a[0];
+        bw.write(maxDefense + "\n");
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
