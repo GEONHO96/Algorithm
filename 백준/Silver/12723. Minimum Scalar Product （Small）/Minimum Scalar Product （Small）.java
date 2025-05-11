@@ -22,7 +22,7 @@ public class Main {
             }
             Arrays.sort(x, Collections.reverseOrder());
             st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; j < n; j++){
                 y[j] = Integer.parseInt(st.nextToken());
             }
             Arrays.sort(y);
