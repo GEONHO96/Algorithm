@@ -22,11 +22,11 @@ public class Main {
         int currentTime = 0;
         for (int i = 0; i < N; i++) {
             int arrival = cow[i][0];
-            int inspection = cow[i][1];
+            int inspect = cow[i][1];
             if (currentTime < arrival) {
                 currentTime = arrival;
             }
-            currentTime += inspection;
+            currentTime += inspect;
         }
         bw.write(currentTime + "\n");
         bw.flush();
