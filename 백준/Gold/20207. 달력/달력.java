@@ -20,16 +20,16 @@ public class Main {
             }
         }
         int totalArea = 0;
-        int height = 0;
         int width = 0;
+        int height = 0;
         for (int i = 1; i <= 366; i++) {
             if (calendar[i] > 0) {
                 height = Math.max(height, calendar[i]);
                 width++;
             } else {
-                totalArea += height * width;
-                height = 0;
+                totalArea += width * height;
                 width = 0;
+                height = 0;
             }
         }
         bw.write(totalArea + "\n");
