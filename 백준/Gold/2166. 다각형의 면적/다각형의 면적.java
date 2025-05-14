@@ -22,7 +22,7 @@ public class Main {
             area += (x[i] * y[(i + 1) % N]) - (x[(i + 1) % N] * y[i]);
         }
         area = Math.abs(area) / 2.0;
-        bw.write(String.format("%.1f\n", area));
+        bw.write(String.format("%.1f", area));
         bw.flush();
         bw.close();
         br.close();
