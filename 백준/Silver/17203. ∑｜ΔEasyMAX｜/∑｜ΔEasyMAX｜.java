@@ -22,9 +22,8 @@ public class Main {
             int i = Integer.parseInt(st.nextToken());
             int r = Integer.parseInt(st.nextToken());
             int change = 0;
-            if (i == r) {
-                bw.write("0\n");
-            } else {
+            if (i == r) bw.write("0\n");
+            else {
                 for (int j = i; j < r; j++) {
                     change += Math.abs(rhythms[j] - rhythms[j - 1]);
                 }
