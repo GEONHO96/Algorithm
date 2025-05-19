@@ -16,5 +16,6 @@ public class Main {
         bw.write(String.valueOf(word.length()));
         bw.flush();
         bw.close();
+        br.close();
     }
 }
