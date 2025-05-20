@@ -34,7 +34,7 @@ public class Main {
             return temp[2];
         }
         int half = size / 2;
-        int[] pooled =new int[4];
+        int[] pooled = new int[4];
         pooled[0] = pooling(arr, x, y, half);
         pooled[1] = pooling(arr, x + half, y, half);
         pooled[2] = pooling(arr, x, y + half, half);
