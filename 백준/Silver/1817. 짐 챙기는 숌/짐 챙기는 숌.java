@@ -34,7 +34,7 @@ public class Main {
                 currentWeight += book[i];
             }
         }
-        bw.write(boxCount + "\n");
+        bw.write(boxCount +  "\n");
         bw.flush();
         bw.close();
         br.close();
