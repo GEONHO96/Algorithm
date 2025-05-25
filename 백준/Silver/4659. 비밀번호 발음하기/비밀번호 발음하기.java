@@ -37,7 +37,7 @@ public class Main {
                 }
                 prevChar = ch;
             }
-            if (isAcceptable && hasVowel) {
+            if (hasVowel && isAcceptable) {
                 bw.write("<" + input + "> is acceptable.\n");
             } else {
                 bw.write("<" + input + "> is not acceptable.\n");
