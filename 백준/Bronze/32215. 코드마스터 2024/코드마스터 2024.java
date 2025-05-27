@@ -14,7 +14,7 @@ public class Main {
         int m = Integer.parseInt(st.nextToken());
         int k = Integer.parseInt(st.nextToken());
         int count = m * k + m;
-        bw.write(count + "\n");
+        bw.write(String.valueOf(count));
         bw.flush();
         bw.close();
         br.close();
