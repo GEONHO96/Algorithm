@@ -19,7 +19,7 @@ public class Main {
         bw.close();
         br.close();
     }
-    static int countFactor(int n, int factor){
+    static int countFactor(int n, int factor) {
         int count = 0;
         while (n >= factor) {
             count += n / factor;
