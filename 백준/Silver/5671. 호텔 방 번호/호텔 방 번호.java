@@ -10,7 +10,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         String input;
-        while((input = br.readLine()) != null && !input.isEmpty()) {
+        while ((input = br.readLine()) != null && !input.isEmpty()) {
             StringTokenizer st = new StringTokenizer(input);
             int N = Integer.parseInt(st.nextToken());
             int M = Integer.parseInt(st.nextToken());
@@ -23,7 +23,7 @@ public class Main {
         bw.flush();
         bw.close();
         br.close();
-    } 
+    }
     public static boolean isUnique(int num) {
         boolean[] visited = new boolean[10];
         while (num > 0) {
