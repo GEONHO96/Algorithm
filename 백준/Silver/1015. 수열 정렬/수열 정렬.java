@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class Main {
-    static class Pair {
+    public static class Pair {
         int value, index;
         Pair(int value, int index) {
             this.value = value;
