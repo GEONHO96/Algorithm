@@ -19,7 +19,7 @@ public class Main {
                 preference[i][j] = Integer.parseInt(st.nextToken());
             }
         }
-        int totalSum = 0;
+        int maxTotal = 0;
         for (int i = 0; i < M; i++) {
             for (int j = i + 1; j < M; j++) {
                 for (int k = j + 1; k < M; k++) {
@@ -28,11 +28,11 @@ public class Main {
                         int best = Math.max(preference[m][i], Math.max(preference[m][j], preference[m][k]));
                         sum += best;
                     }
-                    totalSum = Math.max(totalSum, sum);
+                    maxTotal = Math.max(maxTotal, sum);
                 }
             }
         }
-        bw.write(totalSum + "\n");
+        bw.write(maxTotal + "\n");
         bw.flush();
         bw.close();
         br.close();
