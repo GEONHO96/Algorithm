@@ -9,11 +9,11 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int N = Integer.parseInt(br.readLine());
-        int ans = 0;
+        int diagonalCount = 0;
         if (N == 3) bw.write("0\n");
         else if (N >= 4) {
-            ans = (N * (N - 1) * (N - 2) * (N - 3)) / 24;
-            bw.write(ans + "\n");
+            diagonalCount = N * (N - 1) * (N - 2) * (N - 3) / 24;
+            bw.write(diagonalCount + "\n");
         }
         bw.flush();
         bw.close();
