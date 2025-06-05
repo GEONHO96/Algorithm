@@ -31,8 +31,8 @@ public class Main {
         for (int i = 0; i < B; i++) originalPrice += burger[i];
         for (int i = 0; i < C; i++) originalPrice += side[i];
         for (int i = 0; i < D; i++) originalPrice += beverage[i];
-        int min = Math.min(B, Math.min(C, D));
         int discountPrice = 0;
+        int min = Math.min(B, Math.min(C, D));
         for (int i = 0; i < min; i++) discountPrice += (int) ((burger[i] + side[i] + beverage[i]) * 0.9);
         for (int i = min; i < B; i++) discountPrice += burger[i];
         for (int i = min; i < C; i++) discountPrice += side[i];
