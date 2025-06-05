@@ -12,9 +12,9 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int T = Integer.parseInt(br.readLine());
         while (T-- > 0) {
-            int N = Integer.parseInt(br.readLine());
+            int n = Integer.parseInt(br.readLine());
             Set<String> cities = new HashSet<>();
-            for (int i = 0; i < N; i++) {
+            for (int i = 0; i < n; i++) {
                 String city = br.readLine();
                 cities.add(city);
             }
