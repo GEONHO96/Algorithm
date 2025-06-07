@@ -12,7 +12,7 @@ public class Main {
         int T = Integer.parseInt(br.readLine());
         String regex = "^[A-F]?A+F+C+[A-F]?$";
         Pattern pattern = Pattern.compile(regex);
-        for (int i = 0; i < T; i++) {
+        while (T-- > 0) {
             String line = br.readLine();
             if (pattern.matcher(line).matches()) {
                 bw.write("Infected!\n");
