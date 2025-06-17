@@ -24,7 +24,7 @@ public class Main {
                 downLen = 1;
             } else if (arr[i] < arr[i - 1]) {
                 downLen++;
-                upLen =1;
+                upLen = 1;
             } else {
                 upLen++;
                 downLen++;
@@ -34,5 +34,6 @@ public class Main {
         bw.write(maxLen + "\n");
         bw.flush();
         bw.close();
+        br.close();
     }
 }
