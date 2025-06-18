@@ -19,7 +19,7 @@ public class Main {
             int x2 = Integer.parseInt(st.nextToken());
             int y2 = Integer.parseInt(st.nextToken());
             for (int x = x1; x < x2; x++) {
-                for (int y = y1; y < y2; y++) {
+                for (int y = y1; y< y2; y++) {
                     if (!map[x][y]) {
                         map[x][y] = true;
                         area++;
