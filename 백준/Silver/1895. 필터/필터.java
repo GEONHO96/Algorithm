@@ -33,7 +33,9 @@ public class Main {
                 }
                 Arrays.sort(window);
                 int median = window[4];
-                if (median >= T) count++;
+                if (median >= T) {
+                    count++;
+                }
             }
         }
         bw.write(count + "\n");
