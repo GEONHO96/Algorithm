@@ -15,7 +15,7 @@ public class Main {
             StringTokenizer st = new StringTokenizer(br.readLine());
             int h = Integer.parseInt(st.nextToken());
             int w = Integer.parseInt(st.nextToken());
-            max = Math.max(h * w, max);
+            max = Math.max(max, h * w);
         }
         bw.write(String.valueOf(max));
         bw.flush();
