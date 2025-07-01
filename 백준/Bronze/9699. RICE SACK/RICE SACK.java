@@ -19,7 +19,7 @@ public class Main {
                 arr[y] = Integer.parseInt(st.nextToken());
             }
             Arrays.sort(arr, Collections.reverseOrder());
-            bw.write("Case #" + x + ": " + arr[0] + "\n");
+            bw.write("Case " + "#" + x + ": " + arr[0] + "\n");
         }
         bw.flush();
         bw.close();
