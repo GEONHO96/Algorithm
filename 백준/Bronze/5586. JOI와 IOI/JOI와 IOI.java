@@ -1,25 +1,27 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String S = sc.next();
-        int cnt1 = 0;
-        int cnt2 = 0;
-
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        String S = br.readLine();
+        int IOICount = 0;
+        int JOICount = 0;
         for (int i = 0; i < S.length() - 2; i++) {
-            if (S.substring(i, i + 3).equals("JOI")) {
-                cnt1++;
+            if (S.charAt(i) == 'I' && S.charAt(i + 1) == 'O' && S.charAt(i + 2) == 'I') {
+                IOICount++;
+            }
+            if (S.charAt(i) == 'J' && S.charAt(i + 1) == 'O' && S.charAt(i + 2) == 'I') {
+                JOICount++;
             }
         }
-
-        for (int i = 0; i < S.length() - 2; i++) {
-            if (S.substring(i, i + 3).equals("IOI")) {
-                cnt2++;
-            }
-        }
-
-        System.out.println(cnt1);
-        System.out.println(cnt2);
+        bw.write(JOICount + "\n" + IOICount);
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
