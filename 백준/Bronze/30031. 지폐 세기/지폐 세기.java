@@ -11,7 +11,7 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int N = Integer.parseInt(br.readLine());
         int totalPrice = 0;
-        for (int i = 0; i < N; i++) {
+        while (N-- > 0) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             int width = Integer.parseInt(st.nextToken());
             int length = Integer.parseInt(st.nextToken());
