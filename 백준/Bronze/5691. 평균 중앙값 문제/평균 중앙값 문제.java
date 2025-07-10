@@ -15,7 +15,7 @@ public class Main {
             int B = Integer.parseInt(st.nextToken());
             if (A == 0 && B == 0) break;
             int C = 2 * A - B;
-            bw.write((C) + "\n");
+            bw.write(C + "\n");
         }
         bw.flush();
         bw.close();
