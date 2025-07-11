@@ -20,8 +20,8 @@ public class Main {
         String S = br.readLine();
         for (int i = 0; i < S.length(); i++) {
             if (S.charAt(i) == 'A') bw.write(String.valueOf(Math.min(Math.min(x, y), z)) + " ");
-            if (S.charAt(i) == 'C') bw.write(String.valueOf(Math.max(Math.max(x, y), z)) + " ");
             if (S.charAt(i) == 'B') bw.write(String.valueOf(w) + " ");
+            if (S.charAt(i) == 'C') bw.write(String.valueOf(Math.max(Math.max(x, y), z)) + " ");
         }
         bw.flush();
         bw.close();
