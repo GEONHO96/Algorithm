@@ -12,7 +12,7 @@ public class Main {
         int N = Integer.parseInt(br.readLine());
         int countA = 0;
         int countB = 0;
-        while (N-- > 0) {
+        while (N -- > 0) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             int A = Integer.parseInt(st.nextToken());
             int B = Integer.parseInt(st.nextToken());
