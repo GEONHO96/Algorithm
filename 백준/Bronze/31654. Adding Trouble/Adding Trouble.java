@@ -6,10 +6,7 @@ public class Main {
         int A = sc.nextInt();
         int B = sc.nextInt();
         int C = sc.nextInt();
-        if (A + B == C) {
-            System.out.println("correct!");
-        } else {
-            System.out.println("wrong!");
-        }
+        if (A + B == C) System.out.println("correct!");
+        else System.out.println("wrong!");
     }
 }
