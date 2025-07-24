@@ -11,8 +11,8 @@ public class Main {
         int n = Integer.parseInt(br.readLine());
         while (n-- > 0) {
             int x = Integer.parseInt(br.readLine());
-            if (Math.abs(x) % 2 == 0) bw.write(x + " is even" + "\n");
-            else bw.write(x + " is odd" + "\n");
+            if (Math.abs(x) % 2 == 0) bw.write(x + " is even\n");
+            else bw.write(x + " is odd\n");
         }
         bw.flush();
         bw.close();
