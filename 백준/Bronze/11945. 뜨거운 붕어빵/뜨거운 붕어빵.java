@@ -13,12 +13,11 @@ public class Main {
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
         for (int i = 0; i < N; i++) {
-            String bungeobbang = br.readLine();
-            StringBuilder reverseBungeobbang = new StringBuilder();
-            for (int j = 0; j < M; j++) {
-                reverseBungeobbang.append(bungeobbang.charAt(M - 1 - j));
+            String str = br.readLine();
+            for (int k = str.length() - 1; k >= 0; k--) {
+                bw.write(str.charAt(k));
             }
-            bw.write(reverseBungeobbang + "\n");
+            bw.write("\n");
         }
         bw.flush();
         bw.close();
