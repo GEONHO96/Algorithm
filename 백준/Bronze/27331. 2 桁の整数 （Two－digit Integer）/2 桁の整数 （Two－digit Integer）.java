@@ -5,7 +5,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int A = sc.nextInt();
         int B = sc.nextInt();
-        int C = 10 * A + B;
+        String C = String.valueOf(A) + String.valueOf(B);
         System.out.println(C);
     }
 }
