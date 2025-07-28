@@ -1,20 +1,30 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int T = sc.nextInt();
-        int A = sc.nextInt();
-        int B = sc.nextInt();
-        int C = sc.nextInt();
-        int D = sc.nextInt();
-        int E = sc.nextInt();
-        int cnt = 0;
-        if (T == A) cnt++;
-        if (T == B) cnt++;
-        if (T == C) cnt++;
-        if (T == D) cnt++;
-        if (T == E) cnt++;
-        System.out.println(cnt);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int T = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int A = Integer.parseInt(st.nextToken());
+        int B = Integer.parseInt(st.nextToken());
+        int C = Integer.parseInt(st.nextToken());
+        int D = Integer.parseInt(st.nextToken());
+        int E = Integer.parseInt(st.nextToken());
+        int count = 0;
+        if (T == A) count++;
+        if (T == B) count++;
+        if (T == C) count++;
+        if (T == D) count++;
+        if (T == E) count++;
+        bw.write(String.valueOf(count));
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
