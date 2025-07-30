@@ -22,7 +22,7 @@ public class Main {
             bw.write("\n");
         }
         bw.flush();
-        br.close();
         bw.close();
+        br.close();
     }
 }
