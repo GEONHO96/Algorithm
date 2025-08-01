@@ -12,7 +12,7 @@ public class Main {
         String S = br.readLine();
         int count = 0;
         for (int i = 0; i < N; i++) {
-            if (S.charAt(i) == 'a' || S.charAt(i) == 'e' || S.charAt(i) == 'i' || S.charAt(i) == 'o' || S.charAt(i) == 'u') count++;
+            if (S.charAt(i) == 'a' | S.charAt(i) == 'e' || S.charAt(i) == 'i' || S.charAt(i) == 'o' || S.charAt(i) == 'u') count++;
         }
         bw.write(String.valueOf(count));
         bw.flush();
