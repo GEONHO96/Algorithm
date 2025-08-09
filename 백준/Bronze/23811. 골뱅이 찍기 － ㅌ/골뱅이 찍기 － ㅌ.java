@@ -12,10 +12,10 @@ public class Main {
         for (int i = 0; i < 5; i++) {
             if (i % 2 == 0) {
                 for (int j = 0; j < N; j++) {
-                    for (int k = 0; k < 5 * N; k++) {
-                        bw.write("@");
-                    }
-                    bw.write("\n");
+                   for (int k = 0; k < 5 * N; k++) {
+                       bw.write("@");
+                   }
+                   bw.write("\n");
                 }
             } else {
                 for (int j = 0; j < N; j++) {
