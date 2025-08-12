@@ -9,23 +9,22 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int N = Integer.parseInt(br.readLine());
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < 5 * N; j++) {
-                bw.write("@");
+        for (int i = 0; i < 5; i++) {
+            if (i == 0 || i == 4) {
+                for (int j = 0; j < N; j++) {
+                    for (int k = 0; k < 5 * N; k++) {
+                        bw.write("@");
+                    }
+                    bw.write("\n");
+                }
+            } else {
+                for (int j = 0; j < N; j++) {
+                    for (int k = 0; k < N; k++) {
+                        bw.write("@");
+                    }
+                    bw.write("\n");
+                }
             }
-            bw.write("\n");
-        }
-        for (int i = 0; i < 3 * N; i++) {
-            for (int j = 0; j < N; j++) {
-                bw.write("@");
-            }
-            bw.write("\n");
-        }
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < 5 * N; j++) {
-                bw.write("@");
-            }
-            bw.write("\n");
         }
         bw.flush();
         bw.close();
