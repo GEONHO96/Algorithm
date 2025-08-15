@@ -13,18 +13,18 @@ public class Main {
             if (i == 0) {
                 for (int j = 0; j < N; j++) {
                     for (int k = 0; k < 5 * N; k++) {
-                        if (k >= 3 * N && k < 4 * N) {
-                            bw.write(" ");
-                        } else {
+                        if (k < 3 * N || (k >= 4 * N && k < 5 * N)) {
                             bw.write("@");
+                        } else {
+                            bw.write(" ");
                         }
                     }
                     bw.write("\n");
                 }
-            } else if (i >= 1 && i <= 3) {
+            } else if (i == 4) {
                 for (int j = 0; j < N; j++) {
                     for (int k = 0; k < 5 * N; k++) {
-                        if ((k < N) || (k >= 2 * N && k < 3 * N) || (k >= 4 * N && k < 5 * N)) {
+                        if (k < N || (k >= 2 * N && k < 5 * N)) {
                             bw.write("@");
                         } else {
                             bw.write(" ");
@@ -35,7 +35,7 @@ public class Main {
             } else {
                 for (int j = 0; j < N; j++) {
                     for (int k = 0; k < 5 * N; k++) {
-                        if ((k < N) || (k >= 2 * N && k < 5 * N)) {
+                        if (k < N || (k >= 2 * N && k < 3 * N) || (k >= 4 * N && k < 5 * N)) {
                             bw.write("@");
                         } else {
                             bw.write(" ");
