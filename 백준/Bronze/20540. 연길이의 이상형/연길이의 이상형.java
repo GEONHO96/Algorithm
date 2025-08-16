@@ -1,16 +1,29 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String mbti  = sc.next();
-        if (mbti.charAt(0) == 'E') System.out.print('I');
-        if (mbti.charAt(0) == 'I') System.out.print('E');
-        if (mbti.charAt(1) == 'S') System.out.print('N');
-        if (mbti.charAt(1) == 'N') System.out.print('S');
-        if (mbti.charAt(2) == 'T') System.out.print('F');
-        if (mbti.charAt(2) == 'F') System.out.print('T');
-        if (mbti.charAt(3) == 'J') System.out.print('P');
-        if (mbti.charAt(3) == 'P') System.out.print('J');
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        String mbti = br.readLine();
+        int length = mbti.length();
+        String newMbti = "";
+        for (int i = 0; i < length; i++) {
+            if (mbti.charAt(i) == 'E') newMbti += "I";
+            if (mbti.charAt(i) == 'I') newMbti += "E";
+            if (mbti.charAt(i) == 'S') newMbti += "N";
+            if (mbti.charAt(i) == 'N') newMbti += "S";
+            if (mbti.charAt(i) == 'T') newMbti += "F";
+            if (mbti.charAt(i) == 'F') newMbti += "T";
+            if (mbti.charAt(i) == 'J') newMbti += "P";
+            if (mbti.charAt(i) == 'P') newMbti += "J";
+        }
+        bw.write(newMbti);
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
