@@ -1,20 +1,31 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        String S = String.valueOf(N);
-        int len = S.length();
-        int leftSum = 0;
-        int rightSum = 0;
-        for (int i = 0; i < len / 2; i++) {
-            leftSum += Integer.parseInt(String.valueOf(S.charAt(i)));
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int N = Integer.parseInt(br.readLine());
+        int length = String.valueOf(N).length();
+        int sum1 = 0;
+        int sum2 = 0;
+        for (int i = 0; i < length; i++) {
+            if (i < length / 2) {
+                sum1 += Integer.parseInt(String.valueOf(String.valueOf(N).charAt(i)));
+            } else {
+                sum2 += Integer.parseInt(String.valueOf(String.valueOf(N).charAt(i)));
+            }
         }
-        for (int i = len / 2; i < len; i++) {
-            rightSum += Integer.parseInt(String.valueOf(S.charAt(i)));
+        if (sum1 == sum2) {
+            bw.write("LUCKY");
+        } else {
+            bw.write("READY");
         }
-        if (leftSum == rightSum) System.out.print("LUCKY");
-        else System.out.print("READY");
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
