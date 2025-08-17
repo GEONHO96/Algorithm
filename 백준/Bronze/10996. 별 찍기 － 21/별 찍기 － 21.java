@@ -11,7 +11,7 @@ public class Main {
         int N = Integer.parseInt(br.readLine());
         for (int i = 0; i < 2 * N; i++) {
             for (int j = 0; j < N; j++) {
-                if((i + j) % 2 == 0) bw.write("*");
+                if ((i + j) % 2 == 0) bw.write("*");
                 else bw.write(" ");
             }
             bw.write("\n");
