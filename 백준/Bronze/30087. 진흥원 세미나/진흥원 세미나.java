@@ -1,18 +1,26 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int N = Integer.parseInt(br.readLine());
         for (int i = 0; i < N; i++) {
-            String S = sc.next();
-            if (S.equals("Algorithm")) System.out.println("204");
-            else if (S.equals("DataAnalysis")) System.out.println("207");
-            else if (S.equals("ArtificialIntelligence")) System.out.println("302");
-            else if (S.equals("CyberSecurity")) System.out.println("B101");
-            else if (S.equals("Network")) System.out.println("303");
-            else if (S.equals("Startup")) System.out.println("501");
-            else if (S.equals("TestStrategy")) System.out.println("105");
+            String subject = br.readLine();
+            if (subject.equals("Algorithm")) bw.write("204\n");
+            if (subject.equals("DataAnalysis")) bw.write("207\n");
+            if (subject.equals("ArtificialIntelligence")) bw.write("302\n");
+            if (subject.equals("CyberSecurity")) bw.write("B101\n");
+            if (subject.equals("Network")) bw.write("303\n");
+            if (subject.equals("Startup")) bw.write("501\n");
+            if (subject.equals("TestStrategy")) bw.write("105\n");
         }
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
