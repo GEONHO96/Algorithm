@@ -17,9 +17,9 @@ public class Main {
         int totalTime = 3600 * A + 60 * B + C + D;
         if (totalTime >= 86400) {
             totalTime = totalTime % 86400;
-            bw.write(totalTime / 3600 + " " + (totalTime % 3600) / 60 + " " + totalTime % 3600 % 60);
+            bw.write(totalTime / 3600 + " " + (totalTime % 3600 / 60) + " " + (totalTime % 3600 % 60) + "\n");
         } else {
-            bw.write(totalTime / 3600 + " " + (totalTime % 3600) / 60 + " " + totalTime % 3600 % 60);
+            bw.write(totalTime / 3600 + " " + (totalTime % 3600 / 60) + " " + (totalTime % 3600 % 60) + "\n");
         }
         bw.flush();
         bw.close();
