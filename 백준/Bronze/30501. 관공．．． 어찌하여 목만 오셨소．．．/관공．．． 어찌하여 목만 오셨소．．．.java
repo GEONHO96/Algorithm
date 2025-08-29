@@ -11,7 +11,9 @@ public class Main {
         int N = Integer.parseInt(br.readLine());
         for (int i = 0; i < N; i++) {
             String name = br.readLine();
-            if (name.contains("S")) bw.write(name);
+            if (name.contains("S")) {
+                bw.write(name);
+            }
         }
         bw.flush();
         bw.close();
