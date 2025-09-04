@@ -13,7 +13,7 @@ public class Main {
         int C = Integer.parseInt(br.readLine());
         int D = Integer.parseInt(br.readLine());
         int E = Integer.parseInt(br.readLine());
-        int time = 0;
+        int time;
         if (A < 0) {
             time = Math.abs(A) * C + D + B * E;
         } else if (A == 0) {
