@@ -1,0 +1,26 @@
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int month = Integer.parseInt(br.readLine());
+        int day = Integer.parseInt(br.readLine());
+        if ((month == 2 && day > 18) || (month >= 3)) {
+            bw.write("After");
+        } else if (month == 2 && day == 18) {
+            bw.write("Special");
+        } else if (month == 2 && day < 18) {
+            bw.write("Before");
+        } else if (month == 1) {
+            bw.write("Before");
+        }
+        bw.flush();
+        bw.close();
+        br.close();
+    }
+}
