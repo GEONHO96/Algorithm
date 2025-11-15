@@ -14,7 +14,7 @@ public class Main {
             if (N == 0) break;
             for (int i = 1; i <= N; i++) {
                 if (i == 1) cnt = 1;
-                if (i >= 2) {
+                else {
                     cnt += i * i;
                 }
             }
