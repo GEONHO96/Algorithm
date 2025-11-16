@@ -8,14 +8,14 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        int cnt = 0;
         while (true) {
+            int cnt = 1;
             int N = Integer.parseInt(br.readLine());
             if (N == 0) break;
-            for (int i = 1; i <= N; i++) {
-                if (i == 1) cnt = 1;
-                else {
-                    cnt += i * i;
+            if (N == 1) cnt = 1;
+            else {
+                for (int i = 2; i <= N; i++) {
+                    cnt = cnt + i * i;
                 }
             }
             bw.write(String.valueOf(cnt) + "\n");
