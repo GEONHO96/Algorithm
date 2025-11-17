@@ -14,7 +14,7 @@ public class Main {
         int U = Integer.parseInt(st.nextToken());
         int L = Integer.parseInt(st.nextToken());
         if (N >= 1000) {
-            if (U >= 8000 || L >= 260) bw.write("Very Good");
+            if ((U >= 8000 || L >= 260)) bw.write("Very Good");
             else bw.write("Good");
         } else {
             bw.write("Bad");
