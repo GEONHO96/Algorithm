@@ -1,14 +1,23 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String S = sc.next();
-        String reverseS = "";
-        for (int i = S.length() - 1; i >= 0; i--) {
-            reverseS += S.charAt(i);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        String word = br.readLine();
+        int length = word.length();
+        StringBuilder newWord = new StringBuilder();
+        for (int i = length - 1; i >= 0; i--) {
+            newWord.append(word.charAt(i));
         }
-        if (S.equals(reverseS)) System.out.println(1);
-        else System.out.println(0);
+        if (word.equals(newWord.toString())) bw.write("1");
+        else bw.write("0");
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
