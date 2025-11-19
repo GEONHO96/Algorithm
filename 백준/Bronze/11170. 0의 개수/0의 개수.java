@@ -14,14 +14,15 @@ public class Main {
             StringTokenizer st = new StringTokenizer(br.readLine());
             int N = Integer.parseInt(st.nextToken());
             int M = Integer.parseInt(st.nextToken());
-            int count = 0;
+            int cnt = 0;
             for (int i = N; i <= M; i++) {
-                String s = String.valueOf(i);
-                for (int j = 0; j < s.length(); j++) {
-                    if (s.charAt(j) == '0') count++;
+                String S = String.valueOf(i);
+                int length = S.length();
+                for (int j = 0; j < length; j++) {
+                    if (S.charAt(j) == '0') cnt++;
                 }
             }
-            bw.write(count + "\n");
+            bw.write(String.valueOf(cnt) + "\n");
         }
         bw.flush();
         bw.close();
