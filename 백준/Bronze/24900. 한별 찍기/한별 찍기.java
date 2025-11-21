@@ -63,6 +63,6 @@ public class Main {
                 "                                          .DND=~~~~=::~~=NN.   . . 8D~~.~~~~~~=DN$ODNDNDNNNDNNNNND8+~..                 \n" +
                 "                                             8DNNI=.~~~~=NDDNNNNDDNDNN.~~~~~IDDNDND7:.                                  \n" +
                 "                                                ?DNNDD?~DD          ~NN~~=NDD$                                          \n" +
-                "                                                     :DDD.            NNNN=                                             \n");
+                "                                                     :DDD.            NNNN=                                             ");
     }
 }
