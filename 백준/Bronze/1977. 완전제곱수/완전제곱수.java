@@ -15,9 +15,9 @@ public class Main {
         int cnt = 0;
         for (int i = M; i <= N; i++) {
             if (Math.sqrt(i) % 1 == 0) {
-                min = Math.min(min, i);
-                sum += i;
                 cnt++;
+                sum += i;
+                min = Math.min(min, i);
             }
         }
         if (cnt > 0) bw.write(String.valueOf(sum) + "\n" + String.valueOf(min));
