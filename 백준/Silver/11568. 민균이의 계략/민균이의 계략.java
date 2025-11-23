@@ -16,9 +16,9 @@ public class Main {
         for (int i = 0; i < N; i++) {
             A[i] = Integer.parseInt(st.nextToken());
         }
-        int max = 0;
         int[] dp = new int[N];
         Arrays.fill(dp, 1);
+        int max = 0;
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < i; j++) {
                 if (A[i] > A[j]) {
