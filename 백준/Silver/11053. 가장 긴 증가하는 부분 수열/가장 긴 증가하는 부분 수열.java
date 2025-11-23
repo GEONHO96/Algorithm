@@ -1,24 +1,35 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+import java.util.Arrays;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int[] arr = new int[N];
-        int[] dp = new int[N];
-        int maxLength = 0;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int N = Integer.parseInt(br.readLine());
+        int[] A = new int[N];
+        int max = 1;
+        StringTokenizer st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
-            arr[i] = sc.nextInt();
-            dp[i] = 1;
+            A[i] = Integer.parseInt(st.nextToken());
+        }
+        int[] dp = new int[N];
+        Arrays.fill(dp, 1);
+        for (int i = 0; i < N; i++) {
             for (int j = 0; j < i; j++) {
-                if(arr[j] < arr[i]) {
-                    dp[i] = Math.max(dp[j] + 1, dp[i]);
+                if (A[i] > A[j]) {
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
                 }
             }
-            if (maxLength < dp[i]) {
-                maxLength = dp[i];
-            }
+            max = Math.max(max, dp[i]);
         }
-        System.out.println(maxLength);
+        bw.write(String.valueOf(max));
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
