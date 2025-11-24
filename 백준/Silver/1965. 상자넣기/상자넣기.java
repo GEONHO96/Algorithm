@@ -11,23 +11,23 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int n = Integer.parseInt(br.readLine());
-        int[] boxes = new int[n];
+        int[] box = new int[n];
         StringTokenizer st = new StringTokenizer(br.readLine());
         for (int i = 0; i < n; i++) {
-            boxes[i] = Integer.parseInt(st.nextToken());
+            box[i] = Integer.parseInt(st.nextToken());
         }
         int[] dp = new int[n];
         Arrays.fill(dp, 1);
-        int maxCount = 0;
-        for (int i = 1; i < n; i++) {
+        int max = 0;
+        for (int i = 0; i < n; i++) {
             for (int j = 0; j < i; j++) {
-                if (boxes[i] > boxes[j]) {
+                if (box[i] > box[j]) {
                     dp[i] = Math.max(dp[i], dp[j] + 1);
-                }                
+                }
             }
-            maxCount = Math.max(maxCount, dp[i]);
+            max = Math.max(max, dp[i]);
         }
-        bw.write(maxCount + "\n");
+        bw.write(String.valueOf(max));
         bw.flush();
         bw.close();
         br.close();
