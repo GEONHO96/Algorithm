@@ -16,20 +16,20 @@ public class Main {
             A[i] = Integer.parseInt(st.nextToken());
         }
         int len = 0;
-        long[] lis = new long[N];
+        int[] lis = new int[N];
         for (int i = 0; i < N; i++) {
-            long left = 0;
-            long right = len;
-            long x = A[i];
+            int left = 0;
+            int right = len;
+            int x = A[i];
             while (left < right) {
-                long mid = (left + right) / 2;
-                if (lis[(int) mid] < x) {
+                int mid = (left + right) / 2;
+                if (lis[mid] < x) {
                     left = mid + 1;
                 } else {
                     right = mid;
                 }
             }
-            lis[(int) left] = x;
+            lis[left] = x;
             if (left == len) len++;
         }
         bw.write(String.valueOf(len));
