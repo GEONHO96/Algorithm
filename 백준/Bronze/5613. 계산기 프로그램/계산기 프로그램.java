@@ -10,21 +10,21 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int a = Integer.parseInt(br.readLine());
         while (true) {
-            String operation = br.readLine();
-            if (operation.equals("=")) {
-                break;
-            } else if (operation.equals("+")) {
+            String operator = br.readLine();
+            if (operator.equals("+")) {
                 int b = Integer.parseInt(br.readLine());
                 a += b;
-            } else if (operation.equals("-")) {
+            } else if (operator.equals("-")) {
                 int b = Integer.parseInt(br.readLine());
                 a -= b;
-            } else if (operation.equals("*")) {
+            } else if (operator.equals("*")) {
                 int b = Integer.parseInt(br.readLine());
                 a *= b;
-            } else if (operation.equals("/")) {
+            } else if (operator.equals("/")) {
                 int b = Integer.parseInt(br.readLine());
                 a /= b;
+            } else {
+                break;
             }
         }
         bw.write(String.valueOf(a));
