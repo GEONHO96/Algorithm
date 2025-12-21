@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 17796 KB, 시간: 184 ms
+메모리: 14976 KB, 시간: 120 ms
 
 ### 분류
 
@@ -12,13 +12,13 @@
 
 ### 제출 일자
 
-2024년 11월 29일 10:12:02
+2025년 12월 21일 21:28:11
 
 ### 문제 설명
 
 <p>입력으로 주어지는 문자열에서 연속으로 3개의 문자가 JOI 또는 IOI인 곳이 각각 몇 개 있는지 구하는 프로그램을 작성하시오. 문자열은 알파벳 대문자로만 이루어져 있다. 예를 들어, 아래와 같이 "JOIOIOI"에는 JOI가 1개, IOI가 2개 있다.</p>
 
-<p style="text-align: center;"><img alt="" src="https://www.acmicpc.net/upload/images/joioioi.png" style="width: 230px; height: 73px;"></p>
+<p style="text-align: center;"><img alt="" src="" style="width: 230px; height: 73px;"></p>
 
 ### 입력 
 

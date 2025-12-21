@@ -1,25 +1,24 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String S = sc.next();
-        int cnt1 = 0;
-        int cnt2 = 0;
-
-        for (int i = 0; i < S.length() - 2; i++) {
-            if (S.substring(i, i + 3).equals("JOI")) {
-                cnt1++;
-            }
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        String str = br.readLine();
+        int cntJOI = 0;
+        int cntIOI = 0;
+        for (int i = 0; i < str.length() - 2; i++) {
+            if (str.substring(i, i + 3).equals("IOI")) cntIOI++;
+            if (str.substring(i, i + 3).equals("JOI")) cntJOI++;
         }
-
-        for (int i = 0; i < S.length() - 2; i++) {
-            if (S.substring(i, i + 3).equals("IOI")) {
-                cnt2++;
-            }
-        }
-
-        System.out.println(cnt1);
-        System.out.println(cnt2);
+        bw.write(String.valueOf(cntJOI) + "\n");
+        bw.write(String.valueOf(cntIOI));
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
