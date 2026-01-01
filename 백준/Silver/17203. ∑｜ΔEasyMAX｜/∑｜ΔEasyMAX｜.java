@@ -12,23 +12,20 @@ public class Main {
         StringTokenizer st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());
         int Q = Integer.parseInt(st.nextToken());
-        int[] rhythms = new int[N];
+        int[] a = new int[N];
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
-            rhythms[i] = Integer.parseInt(st.nextToken());
+            a[i] = Integer.parseInt(st.nextToken());
         }
-        while (Q-- > 0) {
+        for (int k = 0; k < Q; k++) {
+            int sum = 0;
             st = new StringTokenizer(br.readLine());
             int i = Integer.parseInt(st.nextToken());
-            int r = Integer.parseInt(st.nextToken());
-            int change = 0;
-            if (i == r) bw.write("0\n");
-            else {
-                for (int j = i; j < r; j++) {
-                    change += Math.abs(rhythms[j] - rhythms[j - 1]);
-                }
-                bw.write(change + "\n");
+            int j = Integer.parseInt(st.nextToken());
+            for (int x = i - 1; x < j - 1; x++) {
+                sum += Math.abs(a[x + 1] - a[x]);
             }
+            bw.write(String.valueOf(sum) + "\n");
         }
         bw.flush();
         bw.close();
