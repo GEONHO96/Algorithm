@@ -11,21 +11,21 @@ public class Main {
         int t = Integer.parseInt(br.readLine());
         while (t-- > 0) {
             int n = Integer.parseInt(br.readLine());
-            if (n == 0) bw.write(1 + "\n");
-            if (n == 1) bw.write(1 + "\n");
-            if (n == 2) bw.write(2 + "\n");
-            if (n == 3) bw.write(4 + "\n");
-            if (n >= 4) {
-                long[] koong = new long[n + 1];
-                koong[0] = 1;
-                koong[1] = 1;
-                koong[2] = 2;
-                koong[3] = 4;
-                for (int i = 4; i <= n; i++) {
+            long[] koong = new long[n + 1];
+            if (n == 0) koong[n] = 1;
+            if (n == 1) koong[n] = 1;
+            if (n == 2) koong[n] = 2;
+            if (n == 3) koong[n] = 4;
+            for (int i = 0; i <= n; i++) {
+                if (i == 0) koong[i] = 1;
+                else if (i == 1) koong[i] = 1;
+                else if (i == 2) koong[i] = 2;
+                else if (i == 3) koong[i] = 4;
+                else {
                     koong[i] = koong[i - 1] + koong[i - 2] + koong[i - 3] + koong[i - 4];
                 }
-                bw.write(koong[n] + "\n");
             }
+            bw.write(String.valueOf(koong[n]) + "\n");
         }
         bw.flush();
         bw.close();
