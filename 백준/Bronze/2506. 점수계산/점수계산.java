@@ -1,28 +1,40 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int[] arr = new int[N];
-        int totalScore = 0;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int N = Integer.parseInt(br.readLine());
+        int sum = 0;
+        int[] scores = new int[N];
+        StringTokenizer st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
-            arr[i] = sc.nextInt();
+            scores[i] = Integer.parseInt(st.nextToken());
         }
-        int[] score = new int[N];
+        int[] newScores = new int[N];
         for (int i = 0; i < N; i++) {
             if (i == 0) {
-                if (arr[i] == 0) score[i] = 0;
-                else if (arr[i] == 1) score[i] = 1;
+                if (scores[i] == 0) newScores[i] = 0;
+                if (scores[i] == 1) newScores[i] = 1;
             } else {
-                if (arr[i - 1] == 0 && arr[i] == 1) score[i] = 1;
-                else if (arr[i - 1] == 1 && arr[i] == 0) score[i] = 0;
-                else if (arr[i - 1] == 1 && arr[i] == 1) score[i] = score[i - 1] + 1;
+                if (scores[i - 1] == 0 && scores[i] == 1) {
+                    newScores[i] = 1;
+                } else if (scores[i - 1] == 1 && scores[i] == 1) {
+                    newScores[i] = newScores[i - 1] + 1;
+                }
             }
         }
         for (int i = 0; i < N; i++) {
-            totalScore += score[i];
+            sum += newScores[i];
         }
-        System.out.println(totalScore);
+        bw.write(String.valueOf(sum));
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
