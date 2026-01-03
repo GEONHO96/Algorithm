@@ -10,10 +10,10 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int[] arr = new int[20];
-        int cnt = 10;
         for (int i = 0; i < 20; i++) {
             arr[i] = i + 1;
         }
+        int cnt = 10;
         while (cnt-- > 0) {
             int temp = 0;
             StringTokenizer st = new StringTokenizer(br.readLine());
