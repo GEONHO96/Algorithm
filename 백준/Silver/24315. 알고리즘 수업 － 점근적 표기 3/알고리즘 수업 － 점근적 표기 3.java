@@ -16,7 +16,7 @@ public class Main {
         int c1 = Integer.parseInt(st.nextToken());
         int c2 = Integer.parseInt(st.nextToken());
         int n0 = Integer.parseInt(br.readLine());
-        if ((c1 <= a1 && a1 <= c2) && ((c1 * n0 <= a1 * n0 + a0) && (a1 * n0 + a0 <= c2 * n0))) bw.write("1");
+        if ((c1 <= a1 && a1 <= c2) && (c1 * n0 <= a1 * n0 + a0 && a1 * n0 + a0 <= c2 * n0)) bw.write("1");
         else bw.write("0");
         bw.flush();
         bw.close();
