@@ -1,23 +1,28 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        String S = Integer.toString(N);
-        int length = S.length();
-        char[] ch = new char[length];
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int N = Integer.parseInt(br.readLine());
+        String str = String.valueOf(N);
+        int length = str.length();
+        Integer[] arr = new Integer[length];
         for (int i = 0; i < length; i++) {
-            ch[i] = S.charAt(i);
+            arr[i] = Integer.parseInt(String.valueOf(str.charAt(i)));
         }
-        int[] digit = new int[length];
+        Arrays.sort(arr, Collections.reverseOrder());
         for (int i = 0; i < length; i++) {
-            digit[i] = Integer.parseInt(String.valueOf(S.charAt(i)));
+            bw.write(String.valueOf(arr[i]));
         }
-        Arrays.sort(digit);
-        for (int i = 0; i < length; i++) {
-            System.out.print(digit[length - i - 1]);
-        }
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
