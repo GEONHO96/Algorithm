@@ -1,27 +1,31 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Arrays;
 import java.util.Collections;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        String[] arr1 = new String[N];
-        String[] arr2 = new String[N];
-        String[] arr3 = new String[N];
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int N = Integer.parseInt(br.readLine());
+        String[] str = new String[N];
+        String[] newStr1 = new String[N];
+        String[] newStr2 = new String[N];
         for (int i = 0; i < N; i++) {
-            arr1[i] = sc.next();
+            str[i] = br.readLine();
+            newStr1[i] = str[i];
+            newStr2[i] = str[i];
         }
-        for (int i = 0; i < N; i++) {
-            arr2[i] = arr1[i];
-        }
-        for (int i = 0; i < N; i++) {
-            arr3[i] = arr1[i];
-        }
-        Arrays.sort(arr2, Collections.reverseOrder());
-        Arrays.sort(arr3);
-        if (Arrays.equals(arr2, arr1)) System.out.println("DECREASING");
-        else if (Arrays.equals(arr3, arr1)) System.out.println("INCREASING");
-        else System.out.println("NEITHER");
+        Arrays.sort(newStr1);
+        Arrays.sort(newStr2, Collections.reverseOrder());
+        if (Arrays.equals(str, newStr1)) bw.write("INCREASING");
+        else if (Arrays.equals(str, newStr2)) bw.write("DECREASING");
+        else bw.write("NEITHER");
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
