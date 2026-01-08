@@ -11,15 +11,15 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int N = Integer.parseInt(br.readLine());
         int[] a = new int[N];
-        int maxProfit = 0;
         StringTokenizer st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
             a[i] = Integer.parseInt(st.nextToken());
         }
         int minPrice = a[0];
+        int maxProfit = 0;
         for (int i = 1; i < N; i++) {
-            maxProfit = Math.max(maxProfit, a[i] - minPrice);
             minPrice = Math.min(minPrice, a[i]);
+            maxProfit = Math.max(maxProfit, a[i] - minPrice);
         }
         bw.write(String.valueOf(maxProfit));
         bw.flush();
