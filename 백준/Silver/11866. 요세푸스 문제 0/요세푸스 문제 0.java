@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.io.BufferedWriter;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 import java.util.Queue;
@@ -12,28 +12,24 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st = new StringTokenizer(br.readLine());
-
         int N = Integer.parseInt(st.nextToken());
         int K = Integer.parseInt(st.nextToken());
-
         Queue<Integer> queue = new LinkedList<>();
-
         for (int i = 1; i <= N; i++) {
-            queue.offer(i);
+            queue.add(i);
         }
-
-        StringBuilder sb = new StringBuilder();
-        sb.append("<");
-
-        while (queue.size() != 1) {
+        bw.write("<");
+        while (!queue.isEmpty()) {
             for (int i = 0; i < K - 1; i++) {
-                queue.offer(queue.poll());
+                queue.add(queue.poll());
             }
-            sb.append(queue.poll() + ", ");
+            if (queue.size() > 1) {
+                bw.write(queue.poll() + ", ");
+            } else {
+                bw.write(String.valueOf(queue.poll()));
+            }
         }
-        sb.append(queue.poll() + ">");
-
-        bw.write(sb.toString() + "\n");
+        bw.write(">");
         bw.flush();
         bw.close();
         br.close();
