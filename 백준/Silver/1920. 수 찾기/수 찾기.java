@@ -1,47 +1,30 @@
-import java.util.Arrays;
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+import java.util.HashMap;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        int N = sc.nextInt();
-        int[] arr = new int[N];
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        HashMap<Integer, Integer> map = new HashMap<>();
+        int N = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
-            arr[i] = sc.nextInt();
+            int K = Integer.parseInt(st.nextToken());
+            map.put(K, 1);
         }
-
-        int M = sc.nextInt();
-        int[] queries = new int[M];
+        int M = Integer.parseInt(br.readLine());
+        st = new StringTokenizer(br.readLine());
         for (int i = 0; i < M; i++) {
-            queries[i] = sc.nextInt();
+            int L = Integer.parseInt(st.nextToken());
+            bw.write(map.containsKey(L) ? "1\n" : "0\n");
         }
-
-        Arrays.sort(arr);
-
-        for (int query : queries) {
-            if (binarySearch(arr, query)) {
-                System.out.println(1);
-            } else {
-                System.out.println(0);
-            }
-        }
-    }
-
-    public static boolean binarySearch(int[] arr, int target) {
-        int left = 0, right = arr.length - 1;
-
-        while (left <= right) {
-            int mid = (left + right) / 2;
-
-            if (arr[mid] == target) {
-                return true;
-            } else if (arr[mid] < target) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
-        }
-        return false;
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
