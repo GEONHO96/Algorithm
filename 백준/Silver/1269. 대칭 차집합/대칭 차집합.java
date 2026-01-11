@@ -4,32 +4,31 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
-import java.util.Set;
-import java.util.HashSet;
+import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        HashMap<Integer, Integer> A = new HashMap<>();
+        HashMap<Integer, Integer> B = new HashMap<>();
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
-        Set<Integer> setA = new HashSet<>();
+        int numA = Integer.parseInt(st.nextToken());
+        int numB = Integer.parseInt(st.nextToken());
+        int numC = 0;
         st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < n; i++) {
-            setA.add(Integer.parseInt(st.nextToken()));
+        for (int i = 0; i < numA; i++) {
+            int num = Integer.parseInt(st.nextToken());
+            A.put(num, 1);
         }
-        Set<Integer> setB = new HashSet<>();
         st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < m; i++) {
-            setB.add(Integer.parseInt(st.nextToken()));
+        for (int i = 0; i < numB; i++) {
+            int num = Integer.parseInt(st.nextToken());
+            B.put(num, 1);
+            if (A.containsKey(num)) numC++;
         }
-        Set<Integer> union = new HashSet<>(setA);
-        union.addAll(setB);
-        Set<Integer> intersection = new HashSet<>(setA);
-        intersection.retainAll(setB);
-        int symmetricDifference = union.size() - intersection.size();
-        bw.write(symmetricDifference + "\n");
+        int result = numA + numB - 2 * numC;
+        bw.write(String.valueOf(result));
         bw.flush();
         bw.close();
         br.close();
