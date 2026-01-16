@@ -1,18 +1,26 @@
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String S = sc.nextLine();
-        int n = S.length();
-        String[] a = new String[n];
-        for (int i = 0; i < n; i++) {
-            a[i] = S.substring(i);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        String S = br.readLine();
+        int length = S.length();
+        String[] str = new String[length];
+        for (int i = 0; i < length; i++) {
+            str[i] = S.substring(i, length);
         }
-        Arrays.sort(a);
-        for (int i = 0; i < n; i++) {
-            System.out.println(a[i]);
+        Arrays.sort(str);
+        for (int i = 0; i < length; i++) {
+            bw.write(str[i] + "\n");
         }
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
