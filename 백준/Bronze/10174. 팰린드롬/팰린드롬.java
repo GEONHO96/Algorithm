@@ -21,7 +21,7 @@ public class Main {
                     sb.append(str.charAt(j));
                 }
             }
-            for (int j = 0; j < sb.length(); j++) {
+            for (int j = 0; j < length; j++) {
                 if (sb.charAt(j) != sb.charAt(length - 1 - j)) {
                     satisfied = false;
                     break;
