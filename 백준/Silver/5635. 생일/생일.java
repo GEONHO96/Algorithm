@@ -4,44 +4,46 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.Arrays;
-import java.util.Comparator;
+import java.util.StringTokenizer;
 
-public class Main {
-    static class Person {
-        String name;
-        int day;
-        int month;
-        int year;
-        Person (String name, int day, int month, int year) {
-            this.name = name;
-            this.day = day;
-            this.month = month;
-            this.year = year;
-        }
+class Student implements Comparable<Student> {
+    String name;
+    int day;
+    int month;
+    int year;
+    Student(String name, int day, int month, int year) {
+        this.name = name;
+        this.day = day;
+        this.month = month;
+        this.year = year;
     }
+    @Override
+    public int compareTo(Student student) {
+        if (this.year == student.year) {
+            if (this.month == student.month) {
+                return this.day - student.day;
+            }
+            return this.month - student.month;
+        }
+        return this.year - student.year;
+    }
+}
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int n = Integer.parseInt(br.readLine());
-        Person[] person = new Person[n];
+        Student[] student = new Student[n];
         for (int i = 0; i < n; i++) {
-            String[] input = br.readLine().split(" ");
-            String name = input[0];
-            int day = Integer.parseInt(input[1]);
-            int month = Integer.parseInt(input[2]);
-            int year = Integer.parseInt(input[3]);
-            person[i] = new Person(name, day, month, year);
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            String name = st.nextToken();
+            int day = Integer.parseInt(st.nextToken());
+            int month = Integer.parseInt(st.nextToken());
+            int year = Integer.parseInt(st.nextToken());
+            student[i] = new Student(name, day, month, year);
         }
-        Arrays.sort(person, new Comparator<Person>() {
-            @Override
-            public int compare(Person p1, Person p2) {
-                if (p1.year != p2.year) return p1.year - p2.year;
-                if (p1.month != p2.month) return p1.month - p2.month;
-                return p1.day - p2.day;
-            }
-        });
-        bw.write(person[n - 1].name + "\n");
-        bw.write(person[0].name + "\n");
+        Arrays.sort(student);
+        bw.write(student[n - 1].name + "\n" + student[0].name);
         bw.flush();
         bw.close();
         br.close();
