@@ -1,7 +1,28 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.OutputStreamWriter;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Main {
-    public static int gcd(int a, int b) {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int A = Integer.parseInt(st.nextToken());
+        int B = Integer.parseInt(st.nextToken());
+        st = new StringTokenizer(br.readLine());
+        int C = Integer.parseInt(st.nextToken());
+        int D = Integer.parseInt(st.nextToken());
+        int E = A * D + B * C;
+        int F = B * D;
+        bw.write(E / gcd(E, F) + " " + F / gcd(E, F));
+        bw.flush();
+        bw.close();
+        br.close();
+    }
+    private static int gcd(int a, int b) {
         int temp;
         while (b > 0) {
             temp = a;
@@ -10,15 +31,7 @@ public class Main {
         }
         return a;
     }
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int numerator1 = sc.nextInt();
-        int denominator1 = sc.nextInt();
-        int numerator2 = sc.nextInt();
-        int denominator2 = sc.nextInt();
-        int numerator = ((numerator1 * denominator2) + (numerator2 * denominator1)) / gcd(denominator1, denominator2);
-        int denominator = (denominator1 * denominator2) / gcd(denominator1, denominator2);
-        int gcd = gcd(numerator, denominator);
-        System.out.println(numerator / gcd + " " + denominator / gcd);
+    private static int lcm(int a, int b) {
+        return (a * b) / gcd(a, b);
     }
 }
