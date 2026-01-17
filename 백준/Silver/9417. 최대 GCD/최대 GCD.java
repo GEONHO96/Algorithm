@@ -19,7 +19,7 @@ public class Main {
                     maxGCD = Math.max(maxGCD, gcd);
                 }
             }
-            bw.write(String.valueOf(maxGCD) + "\n");
+            bw.write(maxGCD + "\n");
         }
         bw.flush();
         bw.close();
