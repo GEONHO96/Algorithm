@@ -1,28 +1,36 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
 import java.util.Arrays;
 import java.util.Collections;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int[] A = new int[N];
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int N = Integer.parseInt(br.readLine());
+        Integer[] A = new Integer[N];
+        StringTokenizer st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
-            A[i] = sc.nextInt();
+            A[i] = Integer.parseInt(st.nextToken());
         }
         Arrays.sort(A);
-        int[] B = new int[N];
+        st = new StringTokenizer(br.readLine());
+        Integer[] B = new Integer[N];
         for (int i = 0; i < N; i++) {
-            B[i] = sc.nextInt();
+            B[i] = Integer.parseInt(st.nextToken());
         }
-        Integer[] BReverse = Arrays.stream(B).boxed().toArray(Integer[]::new);
-        Arrays.sort(BReverse, Collections.reverseOrder());
-        int[] S = new int[N];
-        int sum = 0;
+        Arrays.sort(B, Collections.reverseOrder());
+        int S = 0;
         for (int i = 0; i < N; i++) {
-            S[i] = A[i] * BReverse[i];
-            sum += S[i];
+            S += A[i] * B[i];
         }
-        System.out.println(sum);
+        bw.write(String.valueOf(S));
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
