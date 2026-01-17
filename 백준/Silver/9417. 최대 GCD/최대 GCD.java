@@ -19,13 +19,13 @@ public class Main {
                     maxGCD = Math.max(maxGCD, gcd);
                 }
             }
-            bw.write(maxGCD + "\n");
+            bw.write(String.valueOf(maxGCD) + "\n");
         }
         bw.flush();
         bw.close();
         br.close();
     }
-    public static int gcd(int a, int b) {
+    private static int gcd(int a, int b) {
         int temp;
         while (b > 0) {
             temp = a;
