@@ -1,19 +1,26 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        sc.nextLine();
-        for (int i = 0; i < N; i++) {
-            String S = sc.nextLine();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int N = Integer.parseInt(br.readLine());
+        while (N-- > 0) {
+            String sentence = br.readLine();
+            int length = sentence.length();
             StringBuilder sb = new StringBuilder();
-            for (int j = 0; j < S.length(); j++) {
-                if (j == 0) sb.append(Character.toUpperCase(S.charAt(j)));
-                else sb.append(S.charAt(j));
+            for (int i = 0; i < length; i++) {
+                if (i == 0) sb.append(Character.toUpperCase(sentence.charAt(i)));
+                else sb.append(sentence.charAt(i));
             }
-            System.out.println(sb);
+            bw.write(sb.toString() + "\n");
         }
-        sc.close();
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
