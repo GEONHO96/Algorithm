@@ -3,8 +3,8 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.StringTokenizer;
 import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -19,7 +19,7 @@ public class Main {
             A[i] = Integer.parseInt(st.nextToken());
         }
         Arrays.sort(A);
-        bw.write(A[K - 1] + "\n");
+        bw.write(A[K - 1] + " ");
         bw.flush();
         bw.close();
         br.close();
