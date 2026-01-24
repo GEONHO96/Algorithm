@@ -11,13 +11,13 @@ public class Main {
         String input = br.readLine();
         int length = input.length();
         int cnt = 0;
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < length; i++) {
             if (input.charAt(i) == 'e') cnt++;
         }
-        StringBuilder sb = new StringBuilder();
         sb.append(input.charAt(0));
         for (int i = 0; i < 2 * cnt; i++) {
-            sb.append('e');
+            sb.append("e");
         }
         sb.append(input.charAt(length - 1));
         bw.write(sb.toString());
