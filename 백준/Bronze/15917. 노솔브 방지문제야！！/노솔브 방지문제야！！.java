@@ -9,9 +9,9 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int Q = Integer.parseInt(br.readLine());
-        for (int i = 0; i < Q; i++) {
-            boolean satisfied = true;
+        while (Q-- > 0) {
             int a = Integer.parseInt(br.readLine());
+            boolean satisfied = true;
             while (a > 0) {
                 if (a % 2 == 0) {
                     a /= 2;
