@@ -4,34 +4,36 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.Arrays;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Objects;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        int[] scores = new int[8];
-        int[] copyOfScores = new int[8];
+        Integer[] scores = new Integer[8];
+        Integer[] duplicatedScores = new Integer[8];
+        Integer[] top5Scores = new Integer[5];
         for (int i = 0; i < 8; i++) {
             scores[i] = Integer.parseInt(br.readLine());
-            copyOfScores[i] = scores[i];
+            duplicatedScores[i] = scores[i];
         }
-        Arrays.sort(scores);
-        int sum = scores[3] + scores[4] + scores[5] + scores[6] + scores[7];
+        Arrays.sort(scores, Collections.reverseOrder());
+        int sum = 0;
+        for (int i = 0; i < 5; i++) {
+            sum += scores[i];
+        }
         bw.write(sum + "\n");
-        List<Integer> list = new ArrayList<>();
-        for (int i = 3; i < 8; i++) {
+        for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 8; j++) {
-                if (scores[i] == copyOfScores[j]) {
-                    list.add(j + 1);
+                if (Objects.equals(scores[i], duplicatedScores[j])) {
+                    top5Scores[i] = j + 1;
                 }
             }
         }
-        int[] arr = list.stream().mapToInt(Integer::intValue).toArray();
-        Arrays.sort(arr);
-        for (int i = 0; i < arr.length; i++) {
-            bw.write(arr[i] + " ");
+        Arrays.sort(top5Scores);
+        for (int i = 0; i < 5; i++) {
+            bw.write(top5Scores[i] + " ");
         }
         bw.flush();
         bw.close();
