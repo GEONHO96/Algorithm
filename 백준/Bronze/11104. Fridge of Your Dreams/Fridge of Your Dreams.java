@@ -9,13 +9,13 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int n = Integer.parseInt(br.readLine());
-        for (int i = 0; i < n; i++) {
+        while (n-- > 0) {
             String S = br.readLine();
-            long sum = 0;
-            for (int j = 0; j < 24; j++) {
-                if (S.charAt(j) == '1') sum += (long) Math.pow(2, 23 - j);
+            int num = 0;
+            for (int i = 0; i < 24; i++) {
+                if (S.charAt(i) == '1') num += (int) Math.pow(2, 23 - i);
             }
-            bw.write(sum + "\n");
+            bw.write(num + "\n");
         }
         bw.flush();
         bw.close();
