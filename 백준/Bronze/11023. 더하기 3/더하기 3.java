@@ -1,15 +1,22 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String S = sc.nextLine();
-        String[] numbers = S.split(" ");
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        String[] input = br.readLine().split(" ");
+        int length = input.length;
         int sum = 0;
-        for (String num : numbers) {
-            sum += Integer.parseInt(num);
+        for (int i = 0; i < length; i++) {
+            sum += Integer.parseInt(input[i]);
         }
-        System.out.println(sum);
-        sc.close();
+        bw.write(String.valueOf(sum));
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
