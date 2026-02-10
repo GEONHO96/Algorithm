@@ -15,8 +15,7 @@ public class Main {
             if (S.charAt(i) == 'C') c++;
         }
         int o = N - c;
-        int slots = o + 1;
-        int ans = (c + slots - 1) / slots;
+        int ans = (c + o) / (o + 1);
         bw.write(String.valueOf(ans));
         bw.flush();
         bw.close();
