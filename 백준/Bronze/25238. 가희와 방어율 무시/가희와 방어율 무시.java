@@ -12,7 +12,7 @@ public class Main {
         StringTokenizer st = new StringTokenizer(br.readLine());
         int a = Integer.parseInt(st.nextToken());
         int b = Integer.parseInt(st.nextToken());
-        if ((a - a * ((double) b / 100)) >= 100) bw.write("0");
+        if (a - (a * (double) b / 100) >= 100) bw.write("0");
         else bw.write("1");
         bw.flush();
         bw.close();
