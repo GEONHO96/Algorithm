@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("  ___  ___  ___\n" +
+        System.out.print("  ___  ___  ___\n" +
                 "  | |__| |__| |\n" +
                 "  |           |\n" +
                 "   \\_________/\n" +
