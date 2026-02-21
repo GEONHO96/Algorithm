@@ -1,39 +1,45 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Stack;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         Stack<Integer> stack = new Stack<>();
-
-        for (int i = 0; i < N; i++) {
-            String command = sc.next();
-            if (command.equals("push")) {
-                int K = sc.nextInt();
-                stack.push(K);
-            } else if (command.equals("pop")) {
+        int N = Integer.parseInt(br.readLine());
+        while (N-- > 0) {
+            String[] command = br.readLine().split(" ");
+            if (command[0].equals("push")) {
+                int num = Integer.parseInt(command[1]);
+                stack.push(num);
+            } else if (command[0].equals("top")) {
                 if (stack.isEmpty()) {
-                    System.out.println(-1);
+                    bw.write("-1\n");
                 } else {
-                    System.out.println(stack.peek());
-                    stack.pop();
+                    bw.write(stack.peek() + "\n");
                 }
-            } else if (command.equals("size")) {
-                System.out.println(stack.size());
-            } else if (command.equals("empty")) {
+            } else if (command[0].equals("size")) {
+                bw.write(stack.size() + "\n");
+            } else if (command[0].equals("empty")) {
                 if (stack.isEmpty()) {
-                    System.out.println(1);
+                    bw.write("1\n");
                 } else {
-                    System.out.println(0);
+                    bw.write("0\n");
                 }
-            } else if (command.equals("top")) {
+            } else if (command[0].equals("pop")) {
                 if (stack.isEmpty()) {
-                    System.out.println(-1);
+                    bw.write("-1\n");
                 } else {
-                    System.out.println(stack.peek());
+                    bw.write(stack.pop() + "\n");
                 }
             }
         }
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
