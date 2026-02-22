@@ -1,44 +1,51 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.LinkedList;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int N = Integer.parseInt(br.readLine());
         LinkedList<Integer> queue = new LinkedList<>();
-        int N = sc.nextInt();
-        for (int i = 0; i < N; i++) {
-            String command = sc.next();
-            if (command.equals("push")) {
-                int K = sc.nextInt();
+        while (N-- > 0) {
+            String[] command = br.readLine().split(" ");
+            if (command[0].equals("push")) {
+                int K = Integer.parseInt(command[1]);
                 queue.add(K);
-            } else if (command.equals("pop")) {
+            } else if (command[0].equals("pop")) {
                 if (queue.isEmpty()) {
-                    System.out.println(-1);
+                    bw.write("-1\n");
                 } else {
-                    System.out.println(queue.peek());
-                    queue.poll();
+                    bw.write(queue.poll() + "\n");
                 }
-            } else if (command.equals("size")) {
-                System.out.println(queue.size());
-            } else if (command.equals("empty")) {
+            } else if (command[0].equals("size")) {
+                bw.write(queue.size() + "\n");
+            } else if (command[0].equals("empty")) {
                 if (queue.isEmpty()) {
-                    System.out.println(1);
+                    bw.write("1\n");
                 } else {
-                    System.out.println(0);
+                    bw.write("0\n");
                 }
-            } else if (command.equals("front")) {
+            } else if (command[0].equals("front")) {
                 if (queue.isEmpty()) {
-                    System.out.println(-1);
+                    bw.write("-1\n");
                 } else {
-                    System.out.println(queue.peek());
+                    bw.write(queue.getFirst() + "\n");
                 }
-            } else if (command.equals("back")) {
+            } else if (command[0].equals("back")) {
                 if (queue.isEmpty()) {
-                    System.out.println(-1);
+                    bw.write("-1\n");
                 } else {
-                    System.out.println(queue.getLast());
+                    bw.write(queue.getLast() + "\n");
                 }
             }
         }
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
