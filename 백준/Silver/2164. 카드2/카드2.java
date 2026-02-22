@@ -17,10 +17,9 @@ public class Main {
         }
         while (queue.size() > 1) {
             queue.poll();
-            queue.add(queue.peek());
-            queue.poll();
+            queue.add(queue.poll());
         }
-        bw.write(String.valueOf(queue.peek()));
+        bw.write(String.valueOf(queue.poll()));
         bw.flush();
         bw.close();
         br.close();
