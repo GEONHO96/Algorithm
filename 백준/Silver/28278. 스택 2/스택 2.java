@@ -1,41 +1,45 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Stack;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int N = Integer.parseInt(br.readLine());
         Stack<Integer> stack = new Stack<>();
-        StringBuilder sb = new StringBuilder();
-
-        for (int i = 0; i < N; i++) {
-            int K = sc.nextInt();
-            if (K == 1) {
-                int X = sc.nextInt();
+        while (N-- > 0) {
+            String[] command = br.readLine().split(" ");
+            if (Integer.parseInt(command[0]) == 1) {
+                int X = Integer.parseInt(command[1]);
                 stack.push(X);
-            } else if (K == 2) {
+            } else if (Integer.parseInt(command[0]) == 2) {
                 if (stack.isEmpty()) {
-                    sb.append(-1).append("\n");
+                    bw.write("-1\n");
                 } else {
-                    sb.append(stack.peek()).append("\n");
-                    stack.pop();
+                    bw.write(stack.pop() + "\n");
                 }
-            } else if (K == 3) {
-                sb.append(stack.size()).append("\n");
-            } else if (K == 4) {
+            } else if (Integer.parseInt(command[0]) == 3) {
+                bw.write(stack.size() + "\n");
+            } else if (Integer.parseInt(command[0]) == 4) {
                 if (stack.isEmpty()) {
-                    sb.append(1).append("\n");
+                    bw.write("1\n");
                 } else {
-                    sb.append(0).append("\n");
+                    bw.write("0\n");
                 }
-            } else if (K == 5) {
+            } else if (Integer.parseInt(command[0]) == 5) {
                 if (stack.isEmpty()) {
-                    sb.append(-1).append("\n");
+                    bw.write("-1\n");
                 } else {
-                    sb.append(stack.peek()).append("\n");
+                    bw.write(stack.peek() + "\n");
                 }
             }
         }
-        System.out.println(sb);
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
