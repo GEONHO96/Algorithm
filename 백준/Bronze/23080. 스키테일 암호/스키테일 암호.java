@@ -10,11 +10,11 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int K = Integer.parseInt(br.readLine());
         String S = br.readLine();
-        StringBuilder result = new StringBuilder();
+        StringBuilder decoding = new StringBuilder();
         for (int i = 0; i < S.length(); i += K) {
-            result.append(S.charAt(i));
+            decoding.append(S.charAt(i));
         }
-        bw.write(result.toString());
+        bw.write(decoding.toString());
         bw.flush();
         bw.close();
         br.close();
