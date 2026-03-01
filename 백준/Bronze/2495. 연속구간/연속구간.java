@@ -9,11 +9,11 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         for (int i = 0; i < 3; i++) {
-            int max = 0;
             int num = Integer.parseInt(br.readLine());
             String S = String.valueOf(num);
             int length = S.length();
             int len = 1;
+            int max = 0;
             for (int j = 0; j < length - 1; j++) {
                 if (S.charAt(j) == S.charAt(j + 1)) len++;
                 else len = 1;
