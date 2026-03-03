@@ -9,7 +9,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         String S = br.readLine();
-        if (S.contains("d2") || S.contains("D2")) bw.write("D2");
+        if (S.contains("D2") || S.contains("d2")) bw.write("D2");
         else bw.write("unrated");
         bw.flush();
         bw.close();
