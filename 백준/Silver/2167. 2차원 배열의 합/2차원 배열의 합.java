@@ -21,18 +21,18 @@ public class Main {
         }
         int K = Integer.parseInt(br.readLine());
         while (K-- > 0) {
-            int arrSum = 0;
             st = new StringTokenizer(br.readLine());
             int i = Integer.parseInt(st.nextToken());
             int j = Integer.parseInt(st.nextToken());
             int x = Integer.parseInt(st.nextToken());
             int y = Integer.parseInt(st.nextToken());
-            for (int k = i - 1; k < x; k++) {
-                for (int s = j - 1; s < y; s++) {
-                    arrSum += arr[k][s];
+            int prefixSum = 0;
+            for (int k = i - 1; k <= x - 1; k++) {
+                for (int l = j - 1; l <= y - 1; l++) {
+                    prefixSum += arr[k][l];
                 }
             }
-            bw.write(arrSum + "\n");
+            bw.write(prefixSum + "\n");
         }
         bw.flush();
         bw.close();
