@@ -12,7 +12,7 @@ public class Main {
         int length = word.length();
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < length; i++) {
-            if (word.charAt(i) == 'C' || word.charAt(i) == 'A' || word.charAt(i) == 'M' || word.charAt(i) == 'B' || word.charAt(i) == 'R' || word.charAt(i) == 'I' || word.charAt(i) == 'D' || word.charAt(i) == 'G' || word.charAt(i) == 'E') {
+            if (word.charAt(i) == 'C' || word.charAt(i) == 'A' || word.charAt(i) == 'M' || word.charAt(i) == 'B' || word.charAt(i) == 'R' || word.charAt(i) == 'I' || word.charAt(i) == 'R' || word.charAt(i) == 'D' || word.charAt(i) == 'G' || word.charAt(i) == 'E') {
                 continue;
             } else {
                 sb.append(word.charAt(i));
