@@ -3,7 +3,6 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.Set;
 import java.util.HashSet;
 
 public class Main {
@@ -12,13 +11,13 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int T = Integer.parseInt(br.readLine());
         while (T-- > 0) {
+            HashSet<String> set = new HashSet<>();
             int n = Integer.parseInt(br.readLine());
-            Set<String> cities = new HashSet<>();
-            for (int i = 0; i < n; i++) {
-                String city = br.readLine();
-                cities.add(city);
+            while (n-- > 0) {
+                String name = br.readLine();
+                set.add(name);
             }
-            bw.write(cities.size() + "\n");
+            bw.write(set.size() + "\n");
         }
         bw.flush();
         bw.close();
