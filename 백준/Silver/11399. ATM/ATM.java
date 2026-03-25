@@ -3,8 +3,8 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.StringTokenizer;
 import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -17,13 +17,13 @@ public class Main {
             P[i] = Integer.parseInt(st.nextToken());
         }
         Arrays.sort(P);
-        int totalTime = 0;
+        int prefixSum = 0;
         for (int i = 0; i < N; i++) {
             for (int j = 0; j <= i; j++) {
-                totalTime += P[j];
+                prefixSum += P[j];
             }
         }
-        bw.write(totalTime + "\n");
+        bw.write(String.valueOf(prefixSum));
         bw.flush();
         bw.close();
         br.close();
