@@ -3,6 +3,8 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -12,26 +14,21 @@ public class Main {
         StringTokenizer st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());
         int K = Integer.parseInt(st.nextToken());
-        int minCount = Integer.MAX_VALUE;
-        int[] A = new int[N];
+        int cnt = 0;
+        Integer[] A = new Integer[N];
         for (int i = 0; i < N; i++) {
             A[i] = Integer.parseInt(br.readLine());
         }
-        int[] newA = new int[N];
+        Integer[] reverseA = new Integer[N];
         for (int i = 0; i < N; i++) {
-            newA[i] = A[N - 1 - i];
+            reverseA[i] = A[i];
         }
-        while (K > 0) {
-            int count = 0;
-            for (int i = 0; i < N; i++) {
-                if (K / newA[i] > 0) {
-                    count += K / newA[i];
-                    K %= newA[i];
-                }
-            }
-            minCount = Math.min(minCount, count);
+        Arrays.sort(reverseA, Collections.reverseOrder());
+        for (int i = 0; i < N; i++) {
+            cnt += K / reverseA[i];
+            K %= reverseA[i];
         }
-        bw.write(minCount + "\n");
+        bw.write(String.valueOf(cnt));
         bw.flush();
         bw.close();
         br.close();
