@@ -1,21 +1,25 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int[] arr = new int[N];
-        int max = 0;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int N = Integer.parseInt(br.readLine());
+        int[] A = new int[N];
+        StringTokenizer st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
-            arr[i] = sc.nextInt();
+            A[i] = Integer.parseInt(st.nextToken());
         }
-        Arrays.sort(arr);
-        for (int i = 0; i < N - 1; i++) {
-            for (int j = i + 1; j < N; j++) {
-                max = Math.max(max, arr[j] - arr[i]);
-            }
-        }
-        System.out.println(max);
+        Arrays.sort(A);
+        int maxDiff = A[N - 1] - A[0];
+        bw.write(String.valueOf(maxDiff));
+        bw.flush();
+        bw.close();
     }
 }
