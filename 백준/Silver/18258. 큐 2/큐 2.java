@@ -1,54 +1,49 @@
-import java.util.LinkedList;
-import java.util.StringTokenizer;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.LinkedList;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        LinkedList<Integer> queue = new LinkedList<>();
         int N = Integer.parseInt(br.readLine());
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < N; i++) {
-            StringTokenizer st = new StringTokenizer(br.readLine());
-            String command = st.nextToken();
-            if (command.equals("push")) {
-                int K = Integer.parseInt(st.nextToken());
-                queue.add(K);
-            } else if (command.equals("pop")) {
+        LinkedList<Integer> queue = new LinkedList<>();
+        while (N-- > 0) {
+            String[] command = br.readLine().split(" ");
+            if (command[0].equals("push")) {
+                int X = Integer.parseInt(command[1]);
+                queue.add(X);
+            } else if (command[0].equals("pop")) {
                 if (queue.isEmpty()) {
-                    sb.append(-1).append("\n");
+                    bw.write("-1" + "\n");
                 } else {
-                    sb.append(queue.peek()).append("\n");
-                    queue.poll();
+                    bw.write(queue.removeFirst() + "\n");
                 }
-            } else if (command.equals("size")) {
-                sb.append(queue.size()).append("\n");
-            } else if (command.equals("empty")) {
+            } else if (command[0].equals("size")) {
+                bw.write(queue.size() + "\n");
+            } else if (command[0].equals("empty")) {
                 if (queue.isEmpty()) {
-                    sb.append(1).append("\n");
+                    bw.write("1" + "\n");
                 } else {
-                    sb.append(0).append("\n");
+                    bw.write("0" + "\n");
                 }
-            } else if (command.equals("front")) {
+            } else if (command[0].equals("front")) {
                 if (queue.isEmpty()) {
-                    sb.append(-1).append("\n");
+                    bw.write("-1" + "\n");
                 } else {
-                    sb.append(queue.peek()).append("\n");
+                    bw.write(queue.getFirst() + "\n");
                 }
-            } else if (command.equals("back")) {
+            } else if (command[0].equals("back")) {
                 if (queue.isEmpty()) {
-                    sb.append(-1).append("\n");
+                    bw.write("-1" + "\n");
                 } else {
-                    sb.append(queue.getLast()).append("\n");
+                    bw.write(queue.getLast() + "\n");
                 }
             }
         }
-        bw.write(sb.toString());
         bw.flush();
         bw.close();
         br.close();
