@@ -14,8 +14,8 @@ public class Main {
         int B = Integer.parseInt(st.nextToken());
         int C = Integer.parseInt(st.nextToken());
         int max = Math.max(A, Math.max(B, C));
-        int amount = (max - A) + (max - B) + (max - C);
-        bw.write(String.valueOf(amount));
+        int money = (max - A) + (max - B) + (max - C);
+        bw.write(String.valueOf(money));
         bw.flush();
         bw.close();
         br.close();
