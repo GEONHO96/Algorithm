@@ -14,8 +14,8 @@ public class Main {
         int A = Integer.parseInt(st.nextToken());
         int B = Integer.parseInt(st.nextToken());
         int C = Integer.parseInt(st.nextToken());
-        int sum = Math.min(N, A) + Math.min(N, B) + Math.min(N, C);
-        bw.write(String.valueOf(sum));
+        int max = Math.min(N, A) + Math.min(N, B) + Math.min(N, C);
+        bw.write(String.valueOf(max));
         bw.flush();
         bw.close();
         br.close();
